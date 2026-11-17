@@ -56,3 +56,27 @@ h1{letter-spacing:-3.5px}.gradient-text{background:linear-gradient(100deg,#42ff6
 .documentation-panel p,.upload-panel p{max-width:560px;color:var(--muted);font-size:13px}
 .resource-label{color:#70ff82}
 @media(max-width:560px){.nav-links{background:#071009;border-color:#285a31}.documentation-panel,.upload-panel{align-items:flex-start;flex-direction:column;padding:24px}.source-code{font-size:11px}}
+
+/* FINAL NEON GREEN OVERRIDES */
+:root{color-scheme:dark;--bg:#050805;--panel:#09110a;--panel2:#0d190f;--text:#e5ffe8;--muted:#91a995;--line:rgba(105,255,125,.22);--blue:#55ff72;--cyan:#a6ff70}
+body{background-color:#050805!important;color:#e5ffe8!important}
+.site-header,.nav-links,.nav-links.open{background-color:rgba(5,8,5,.96)!important}
+.nav-links{color:#a4b9a7!important}
+.nav-links a:hover,.text-link:hover{color:#6dff83!important}
+.nav-contact,.brand-mark{border-color:#45ef65!important;color:#80ff91!important}
+.gradient-text{background-image:linear-gradient(100deg,#43ff69,#c5ff7b)!important}
+.button-primary{background:#65ff7b!important;color:#031006!important}
+.terminal-card{background:#050d07!important;border-color:#39ed60!important}
+.terminal-top,.code-window-top{background:#0b170d!important;border-color:#285a31!important}
+.terminal-body{color:#d8ffdd!important}.terminal-muted{color:#64856a!important}
+.code-purple{color:#b8ff77!important}.code-green{color:#65ff9b!important}
+.floating-chip,.fact-card,.interest-card,.lab-card,.journey-panel,.documentation-panel,.upload-panel{background:#09130b!important;border-color:rgba(105,255,125,.28)!important}
+.interest-card:hover{border-color:#65ff7b!important}
+.journey-visual{background:radial-gradient(circle at 50% 40%,#174d2366,transparent 60%)!important;border-color:#65ff7b55!important}
+.code-window{background:#030704!important;border-color:#285a31!important}
+.source-code{color:#d8ffdd!important}
+.copy-code{background:#102015!important;border-color:#356640!important;color:#baffc2!important}
+.lab-resources>div{background:#071009!important;border-color:#285a31!important}
+.lab-status{color:#a6ff70!important;border-color:#a6ff7055!important}
+.documentation-panel,.upload-panel{background:linear-gradient(110deg,#0b160d,#050905)!important;border-color:#3be85c66!important}
+@media(max-width:560px){.nav-links{background:#071009!important}}
