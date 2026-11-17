@@ -96,6 +96,19 @@ html,body{background:radial-gradient(ellipse at 12% 8%,rgba(104,202,255,.22),tra
 .resource-links a,.resource-links a.secondary{background:linear-gradient(135deg,rgba(140,236,255,.2),rgba(169,164,255,.2),rgba(223,186,255,.2))!important;color:#8cecff!important;border:1px solid rgba(205,230,255,.4)!important}
 .eyebrow,.number,.label{color:#8cecff!important}.hero h1 span,.footer a{color:#d8baff!important}
 .footer{background:rgba(8,14,27,.5)!important;border-color:var(--line)!important}
+
+/* AI GLASSMORPHISM THEME OVERRIDE */
+:root{--bg:#080d1c;--ink:#eef4ff;--muted:#aebbd2;--line:rgba(190,215,255,.22);--card:rgba(255,255,255,.075);--accent:#9cbdff;--soft:rgba(185,167,255,.12);--dark:rgba(255,255,255,.055)}
+body{background:radial-gradient(ellipse at 12% 8%,rgba(87,139,255,.25),transparent 36%),radial-gradient(ellipse at 88% 18%,rgba(174,125,255,.2),transparent 34%),linear-gradient(145deg,#070b17,#101a31 55%,#0a1020);background-attachment:fixed;color:var(--ink)}
+.nav{background:rgba(12,19,38,.48);backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);border-bottom:1px solid var(--line)}
+.card,.chip,.terminal,.resource-links a,.resource-links a.secondary{background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(151,180,255,.045));border:1px solid rgba(205,222,255,.22);backdrop-filter:blur(22px) saturate(155%);-webkit-backdrop-filter:blur(22px) saturate(155%);box-shadow:0 18px 50px rgba(0,0,0,.2),inset 0 1px rgba(255,255,255,.15);color:var(--ink)}
+.card{border-radius:22px}.card:hover{border-color:rgba(131,234,255,.5);box-shadow:0 22px 55px rgba(0,0,0,.3),0 0 26px rgba(131,234,255,.1)}
+.objective,.logic,.resources,.reflection{background:linear-gradient(145deg,rgba(255,255,255,.14),rgba(151,180,255,.045));border-color:rgba(205,222,255,.22)}
+.card p,.intro,.mini-list,.nav-links{color:var(--muted)}.objective p,.logic p,.logic .logic-line{color:#d4def2}
+.chip{border-radius:99px}.resource-links a{border-radius:12px;background:linear-gradient(110deg,#83eaff,#b9a7ff);color:#10172b}
+.resource-links a.secondary{color:var(--ink)}.resource-links a:hover,.resource-links a.secondary:hover{background:linear-gradient(110deg,#b9a7ff,#83eaff);color:#10172b}
+.terminal{border-radius:14px}
+
 </style>
 </head>
 <body>
