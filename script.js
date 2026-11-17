@@ -1,38 +1,7 @@
-const menuButton = document.querySelector(".menu-toggle");
-const nav = document.querySelector(".nav-links");
-
-if (menuButton && nav) {
-  menuButton.addEventListener("click", () => {
-    const isOpen = nav.classList.toggle("open");
-    menuButton.setAttribute("aria-expanded", String(isOpen));
-    menuButton.textContent = isOpen ? "×" : "☰";
-  });
-
-  nav.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      nav.classList.remove("open");
-      menuButton.setAttribute("aria-expanded", "false");
-      menuButton.textContent = "☰";
-    });
-  });
-}
-
-const year = document.querySelector("#year");
-if (year) year.textContent = new Date().getFullYear();
-
-document.querySelectorAll("[data-copy-code]").forEach((button) => {
-  button.addEventListener("click", async () => {
-    const code = button.closest(".code-window")?.querySelector("pre code");
-    if (!code) return;
-
-    try {
-      await navigator.clipboard.writeText(code.textContent);
-      button.textContent = "Copied!";
-      window.setTimeout(() => {
-        button.textContent = "Copy code";
-      }, 1600);
-    } catch {
-      button.textContent = "Select code to copy";
-    }
-  });
-});
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const menu=$(".menu-toggle"),nav=$(".nav-links");if(menu&&nav){menu.addEventListener("click",()=>{let o=nav.classList.toggle("open");menu.setAttribute("aria-expanded",String(o));menu.textContent=o?"×":"☰"});$$("a",nav).forEach(a=>a.addEventListener("click",()=>{nav.classList.remove("open");menu.setAttribute("aria-expanded","false");menu.textContent="☰"}))}
+$("#year").textContent=new Date().getFullYear();const bar=$("#progressBar");window.addEventListener("scroll",()=>{let max=document.documentElement.scrollHeight-innerHeight;bar.style.width=(max?scrollY/max*100:0)+"%"},{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");io.unobserve(e.target)}}),{threshold:.12});$$(".reveal").forEach(el=>io.observe(el));
+const toast=$("#toast");let timer;function note(t){toast.textContent=t;toast.classList.add("show");clearTimeout(timer);timer=setTimeout(()=>toast.classList.remove("show"),2600)}
+const audio=$("#portfolioAudio"),sound=$("#soundButton");sound.addEventListener("click",async()=>{if(audio.paused){try{await audio.play();sound.innerHTML='<span class="sound-icon">♫</span> SOUND: ON'}catch{note("Add assets/portfolio-theme.mp3 to enable music.")}}else{audio.pause();sound.innerHTML='<span class="sound-icon">♫</span> SOUND: OFF'}});
+const grid=$("#labGrid"),key="jce-bleach-lab-cards-v1",edit=$("#editLabs"),add=$("#addLab"),save=$("#saveLabs"),count=$("#labCount");function countLabs(){count.textContent=String($$(".lab-card",grid).length).padStart(2,"0")}function editing(on){$$(".lab-card",grid).forEach(c=>{c.classList.toggle("editing",on);$$("h3,p,.lab-details b",c).forEach(e=>e.contentEditable=String(on))});edit.classList.toggle("active",on);edit.textContent=on?"✓ EDITING":"✎ EDIT CARDS";note(on?"Edit card text directly.":"Editing closed. Save your changes.")}function saveCards(){try{localStorage.setItem(key,JSON.stringify($$(".lab-card",grid).map(c=>({id:c.dataset.labId,html:c.innerHTML}))));note("Lab cards saved in this browser.")}catch{note("Browser storage is full or unavailable.")}}try{const saved=JSON.parse(localStorage.getItem(key)||"null");if(Array.isArray(saved)&&saved.length){grid.innerHTML="";saved.forEach(x=>{let c=document.createElement("article");c.className="lab-card";c.dataset.labId=x.id;c.innerHTML=x.html;grid.append(c)})}}catch{localStorage.removeItem(key)}countLabs();edit.addEventListener("click",()=>editing(!edit.classList.contains("active")));save.addEventListener("click",()=>{editing(false);saveCards()});add.addEventListener("click",()=>{let n=$$(".lab-card",grid).length+1,c=document.createElement("article");c.className="lab-card reveal visible editing";c.dataset.labId="lab-"+Date.now();c.innerHTML='<div class="lab-card-top"><span>LAB ENTRY // '+String(n).padStart(3,"0")+'</span><span class="lab-status">NEW ENTRY</span></div><div class="lab-number">'+String(n).padStart(2,"0")+'</div><h3 contenteditable="true">YOUR LAB TITLE</h3><p contenteditable="true">Write your activity description here.</p><div class="lab-details"><span>SUBJECT: <b contenteditable="true">ADD SUBJECT</b></span><span>DATE: <b contenteditable="true">ADD DATE</b></span></div><div class="lab-links"><a href="#" class="placeholder-link">SOURCE CODE ↗</a><a href="#" class="placeholder-link">OUTPUT ↗</a></div>';grid.append(c);editing(true);countLabs();c.scrollIntoView({behavior:"smooth",block:"center"});note("New lab card added. Edit it, then save.")});grid.addEventListener("click",e=>{let a=e.target.closest(".placeholder-link");if(a&&a.getAttribute("href")==="#"){e.preventDefault();note("Replace this placeholder URL with your actual file link in index.html.")}});
