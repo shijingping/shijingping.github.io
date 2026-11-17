@@ -49,6 +49,18 @@ html,body{background:radial-gradient(ellipse at 12% 8%,rgba(104,202,255,.22),tra
 .prompt,.eyebrow,.terminal-title,.status{color:#8cecff!important}
 .tags span{color:#dfbaff!important;border-color:#dfbaff88!important;background:#dfbaff14!important}
 .footer{background:rgba(8,14,27,.5)!important;border-color:var(--line)!important}
+
+/* AI GLASSMORPHISM THEME OVERRIDE */
+:root{--bg:#080d1c;--panel:rgba(20,31,58,.48);--cyan:#83eaff;--violet:#b9a7ff;--pink:#d5b7ff;--text:#eef4ff;--muted:#aebbd2;--line:rgba(190,215,255,.22)}
+body{background:radial-gradient(ellipse at 12% 8%,rgba(87,139,255,.25),transparent 36%),radial-gradient(ellipse at 88% 18%,rgba(174,125,255,.2),transparent 34%),linear-gradient(145deg,#070b17,#101a31 55%,#0a1020);background-attachment:fixed}
+.topbar{background:rgba(12,19,38,.48);backdrop-filter:blur(24px) saturate(160%);-webkit-backdrop-filter:blur(24px) saturate(160%);border-bottom:1px solid var(--line)}
+.terminal-window,.filebar,.file-card,.file-links a,.status,.tags span{background:linear-gradient(145deg,rgba(255,255,255,.13),rgba(151,180,255,.045));border:1px solid rgba(205,222,255,.22);backdrop-filter:blur(22px) saturate(155%);-webkit-backdrop-filter:blur(22px) saturate(155%);box-shadow:0 18px 55px rgba(0,0,0,.22),inset 0 1px rgba(255,255,255,.16)}
+.terminal-window{border-radius:26px}.terminal-head{background:rgba(255,255,255,.045);border-bottom-color:var(--line)}
+.file-card{border-radius:22px}.file-card:before{opacity:.35}.file-card:hover{border-color:rgba(131,234,255,.55);box-shadow:0 22px 55px rgba(0,0,0,.3),0 0 28px rgba(131,234,255,.12)}
+.btn,.file-links a{border-radius:12px;background:rgba(151,190,255,.1);border-color:rgba(190,215,255,.3)}
+.btn.primary{background:linear-gradient(110deg,#83eaff,#b9a7ff);color:#10172b;border:1px solid rgba(255,255,255,.38)}
+.status,.tags span{border-radius:99px}.top-actions a{border-radius:12px;background:rgba(151,190,255,.07);border-color:var(--line)}
+
 </style></head><body><div class="scan" aria-hidden="true"></div>
 <header class="topbar"><a class="brand" href="index.html">JCE<b>_</b>ROOT // WORK ARCHIVE</a><nav class="top-actions"><a href="index.html">← HOME</a><a href="#tasks">TASK DIRECTORY</a></nav></header>
 <main><section class="hero wrap"><div class="terminal-window"><div class="terminal-head"><div class="dots"><i></i><i></i><i></i></div><span class="terminal-title">jce@workspace: ~/projects</span><span class="terminal-title">SESSION: ACTIVE</span></div><div class="terminal-body"><div class="prompt"><span>DEVELOPER PROFILE / 001</span><br>&gt; JERMAIN C ENGO<br>&gt; BSIT STUDENT / NATIONAL UNIVERSITY CLARK<br>&gt; BUILDING IDEAS INTO CODE</div><h1>DEV_<span class="glow">WORKSPACE</span></h1><p class="hero-copy">Welcome to my digital workspace. This directory contains my programming laboratory activities, source code, documentation, and program outputs. Select a task file to inspect its contents.</p><div class="hero-meta"><span>ENV: <strong>JAVA / WEB</strong></span><span>STATUS: <strong>BUILDING</strong></span><span>FOCUS: <strong>CODE / CREATE / LEARN</strong></span></div><div class="actions"><a class="btn primary" href="#tasks">EXPLORE PROJECTS ↘</a><a class="btn" href="index.html">RETURN TO MAIN SITE</a></div></div></div></section>
