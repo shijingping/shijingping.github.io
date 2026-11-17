@@ -19,3 +19,20 @@ if (menuButton && nav) {
 
 const year = document.querySelector("#year");
 if (year) year.textContent = new Date().getFullYear();
+
+document.querySelectorAll("[data-copy-code]").forEach((button) => {
+  button.addEventListener("click", async () => {
+    const code = button.closest(".code-window")?.querySelector("pre code");
+    if (!code) return;
+
+    try {
+      await navigator.clipboard.writeText(code.textContent);
+      button.textContent = "Copied!";
+      window.setTimeout(() => {
+        button.textContent = "Copy code";
+      }, 1600);
+    } catch {
+      button.textContent = "Select code to copy";
+    }
+  });
+});
