@@ -10,6 +10,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Share+Tech+Mono&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=holo-02">
+  <style>
+    /* Homepage profile photo */
+    .profile-photo-wrap{width:190px;height:190px;margin:27px auto 15px;border-radius:50%;padding:5px;background:linear-gradient(135deg,var(--cyan),var(--violet),var(--pink));box-shadow:0 0 28px #78fff055,0 0 55px #b8a7ff22;position:relative;z-index:1}
+    .profile-photo{display:block;width:100%;height:100%;object-fit:cover;object-position:center;border-radius:50%;border:3px solid rgba(8,19,31,.9)}
+    .crest-name{position:relative;z-index:1;font-size:24px;line-height:.95}
+    @media(max-width:620px){.profile-photo-wrap{width:155px;height:155px;margin:20px auto 12px}.crest-name{font-size:21px}}
+  </style>
 </head>
 <body>
   <div class="scanlines" aria-hidden="true"></div>
@@ -40,8 +47,8 @@
           <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
           <div class="crest-card">
             <div class="crest-top"><span>HOLOGRAM CORE // PERSONAL PROFILE</span><span class="crest-live">● LIVE</span></div>
-            <div class="crest-symbol">斬</div>
-            <div class="crest-name">HOLO<br><span>JCE</span></div>
+            <div class="profile-photo-wrap"><img class="profile-photo" src="assets/profile-cat.webp" alt="Jermain’s cat photo" /></div>
+            <div class="crest-name">JERMAIN<br><span>C. ENGO</span></div>
             <div class="crest-bottom"><span>DISCIPLINE / CURIOSITY / LOGIC</span><span>JCE-017</span></div>
           </div>
           <div class="floating-tag tag-top">HOLOGRAM SYNC // ACTIVE <b>98.7%</b></div>
