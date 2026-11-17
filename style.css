@@ -22,3 +22,37 @@
 .lab-resources>div{padding:16px;background:#0e1728;border:1px solid var(--line);border-radius:8px}
 .lab-resources p{margin:7px 0 0;color:var(--muted);font-size:11px}
 @media(max-width:560px){.lab-card{padding:18px}.lab-card-heading{flex-direction:column}.lab-status{align-self:flex-start}.source-code{font-size:11px;padding:18px 15px}.lab-resources{grid-template-columns:1fr}}
+
+/* WHITE HAT TERMINAL THEME — portfolio visual system */
+:root{--bg:#050805;--panel:#0a110b;--panel2:#0d170e;--text:#e5ffe8;--muted:#8da891;--line:rgba(87,255,112,.19);--blue:#70ff82;--cyan:#a6ff70;--font:'Manrope',sans-serif;--mono:'DM Mono',monospace}
+html{background:#050805}body{background:#050805;color:var(--text);background-image:linear-gradient(rgba(63,255,95,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(63,255,95,.025) 1px,transparent 1px);background-size:34px 34px}
+.background-glow{background:#20ff4b;opacity:.09;filter:blur(140px)}
+.glow-two{background:#a6ff70}
+.site-header{border-bottom:1px solid rgba(87,255,112,.25);background:rgba(5,8,5,.88);backdrop-filter:blur(14px)}
+.brand-mark{border-color:#42ff66;color:#70ff82;border-radius:4px}.accent,.text-link span,.scroll-cue span{color:#70ff82}
+.nav-links{color:#91ad95}.nav-contact{border-color:#39e85b;color:#baffc2;border-radius:3px}
+.eyebrow,.section-index,.hero-meta,.fact-label,.visual-caption,.visual-code{color:#83a88a}
+.status-dot{background:#5dff78;box-shadow:0 0 12px #5dff78}
+h1{letter-spacing:-3.5px}.gradient-text{background:linear-gradient(100deg,#42ff68,#c3ff79);-webkit-background-clip:text;background-clip:text;color:transparent}
+.button-primary{background:#65ff7b;color:#031006;border-radius:3px;box-shadow:0 0 22px #48ff6422}
+.button-primary:hover{box-shadow:0 0 28px #48ff6460}
+.text-link:hover,.nav-links a:hover{color:#70ff82}
+.terminal-card{background:rgba(5,13,7,.97);border:1px solid #36e85a66;border-radius:5px;box-shadow:0 0 55px #21ff3c17,0 25px 90px #000b;transform:none}
+.terminal-top{background:#0b170d;border-bottom-color:#214b29}.terminal-dots i{background:#315c39}.terminal-dots i:first-child{background:#ff6767}.terminal-dots i:nth-child(2){background:#e8c85c}.terminal-dots i:nth-child(3){background:#5dff78}
+.terminal-body{color:#c7f8ce}.terminal-muted{color:#52745a}.code-purple{color:#a6ff70}.code-green{color:#65ff9b}.terminal-prompt{color:#70ff82}
+.orbit{border-color:rgba(87,255,112,.19)}.floating-chip{background:#09140b;border:1px solid #3ce85c55;border-radius:3px;color:#aaffb5}
+.about-section,.interests-section,.journey-section,.contact-section,.labs-section,.documentation-section,.upload-section{border-color:rgba(87,255,112,.2)}
+.fact-card,.interest-card,.journey-panel,.lab-card{background:linear-gradient(145deg,#0b150d,#070c08);border:1px solid rgba(87,255,112,.2);border-radius:5px}
+.interest-card:hover{border-color:#65ff7b;box-shadow:0 0 24px #65ff7b12}
+.interest-icon,.fact-icon,.card-arrow{color:#70ff82}
+.journey-visual{border-color:#65ff7b44;background:radial-gradient(circle at 50% 40%,#174d2366,transparent 60%);border-radius:4px}
+.shield{color:#70ff82}.site-footer{border-color:rgba(87,255,112,.2)}
+.lab-card{border-radius:5px}.lab-status{color:#a6ff70;border-color:#a6ff7044}
+.code-window{border-color:#285a31;border-radius:4px;background:#030704}
+.code-window-top{background:#0b160d;border-color:#285a31}.copy-code{background:#102015;border-color:#356640;color:#baffc2;border-radius:3px}
+.source-code{color:#d8ffdd}.lab-resources>div{background:#08110a;border-color:#285a31;border-radius:4px}
+.documentation-panel,.upload-panel{display:flex;justify-content:space-between;align-items:center;gap:28px;padding:38px;background:linear-gradient(110deg,#0b160d,#070c08);border:1px solid #3be85c55;border-radius:5px}
+.documentation-panel h2,.upload-panel h2{font-size:clamp(34px,4vw,48px);line-height:1.2;letter-spacing:-2px;margin:14px 0}
+.documentation-panel p,.upload-panel p{max-width:560px;color:var(--muted);font-size:13px}
+.resource-label{color:#70ff82}
+@media(max-width:560px){.nav-links{background:#071009;border-color:#285a31}.documentation-panel,.upload-panel{align-items:flex-start;flex-direction:column;padding:24px}.source-code{font-size:11px}}
