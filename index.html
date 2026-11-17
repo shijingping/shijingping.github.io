@@ -19,7 +19,7 @@
     <a class="brand" href="#home" aria-label="Jermain home"><span class="brand-mark">J</span><span>jermain<span class="accent">.</span></span></a>
     <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
     <nav class="nav-links" aria-label="Main navigation">
-      <a href="#about">About</a><a href="#interests">Interests</a><a href="#journey">Journey</a><a href="#contact" class="nav-contact">Contact ↗</a>
+      <a href="#about">About</a><a href="#interests">Interests</a><a href="#labs">Academic Labs</a><a href="#journey">Journey</a><a href="#contact" class="nav-contact">Contact ↗</a>
     </nav>
   </header>
 
@@ -71,13 +71,54 @@
       </div>
     </section>
 
+
+    <section class="section-wrap labs-section" id="labs">
+      <div class="section-heading"><span class="section-index">03 / ACADEMIC LABS</span><span class="section-line"></span></div>
+      <div class="section-title-row"><h2>Learning by<br><span class="gradient-text">building.</span></h2><p>My programming activities, documentation, source code, and program outputs from BSIT.</p></div>
+      <article class="lab-card">
+        <div class="lab-card-heading">
+          <div><span class="lab-tag">JAVA · ARRAYS</span><h3>Three-Dimensional Array</h3><p>Fundamentals of Programming — Lab Activity 01</p></div>
+          <span class="lab-status">DOCUMENTATION IN PROGRESS</span>
+        </div>
+        <p class="lab-description">A Java program that stores values in a three-dimensional array and uses nested loops to display each layer, row, and element.</p>
+        <div class="code-window">
+          <div class="code-window-top"><span><i></i><i></i><i></i></span><span>ThreeDim.java</span><button class="copy-code" type="button" data-copy-code>Copy code</button></div>
+          <pre class="source-code"><code class="language-java">package com.mycompany.threedim;
+
+public class ThreeDim {
+    public static void main(String[] args) {
+        int threeDim[][][] = {
+            {{10, 20}, {30, 40}},
+            {{50, 60}, {70, 80}}
+        };
+
+        for (int layer = 0; layer &lt; threeDim.length; layer++) {
+            System.out.println("Layer " + (layer + 1) + ":");
+
+            for (int row = 0; row &lt; threeDim[layer].length; row++) {
+                for (int col = 0; col &lt; threeDim[layer][row].length; col++) {
+                    System.out.print(threeDim[layer][row][col] + " ");
+                }
+                System.out.println();
+            }
+        }
+    }
+}</code></pre>
+        </div>
+        <div class="lab-resources">
+          <div><span class="resource-label">DOCUMENTATION</span><p>Problem, procedure, source code, and output screenshot will be included in the lab PDF.</p></div>
+          <div><span class="resource-label">PROGRAM OUTPUT</span><p>Execution screenshot will be added after the program is run and verified.</p></div>
+        </div>
+      </article>
+    </section>
+
     <section class="section-wrap journey-section" id="journey">
-      <div class="section-heading"><span class="section-index">03 / MY DIRECTION</span><span class="section-line"></span></div>
+      <div class="section-heading"><span class="section-index">04 / MY DIRECTION</span><span class="section-line"></span></div>
       <div class="journey-panel"><div><span class="section-index">THE ROAD AHEAD</span><h2>Learning today.<br><span class="gradient-text">Securing tomorrow.</span></h2><p>My goal is to grow into a cybersecurity professional. I want to understand how systems work, how digital spaces can be protected, and how I can use my IT skills to make a positive impact.</p><a class="text-link" href="#contact">Let's connect <span>→</span></a></div><div class="journey-visual"><div class="shield">⌑</div><span class="visual-caption">FUTURE FOCUS</span><strong>CYBER<br>SECURITY</strong><span class="visual-code">ACCESS GRANTED: KEEP LEARNING</span></div></div>
     </section>
 
     <section class="section-wrap contact-section" id="contact">
-      <div class="section-heading"><span class="section-index">04 / SAY HELLO</span><span class="section-line"></span></div>
+      <div class="section-heading"><span class="section-index">05 / SAY HELLO</span><span class="section-line"></span></div>
       <div class="contact-content"><span class="section-index">HAVE A PROJECT OR JUST WANT TO CONNECT?</span><h2>Let's make<br><span class="gradient-text">something meaningful.</span></h2><p>I'm always open to learning, meeting people, and sharing ideas about technology.</p><a class="button button-primary" href="https://github.com/shijingping" target="_blank" rel="noopener noreferrer">Find me on GitHub <span>↗</span></a></div>
     </section>
   </main>
