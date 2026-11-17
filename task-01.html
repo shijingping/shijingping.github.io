@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f4f3ef">
+<meta name="description" content="Task 01 — 3x3 Matrix Calculator by Jermain C. Engo.">
+<title>TASK 01 // MATRIX CALCULATOR — JERMAIN C ENGO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f3ef;--ink:#171717;--muted:#77766f;--line:#deddd6;--card:#fff;--accent:#6955e8;--soft:#eae7ff;--dark:#17171d;--mono:"DM Mono",monospace;--body:"Manrope",sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body)}a{color:inherit;text-decoration:none}.nav{height:76px;padding:0 6vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand,.nav a,.eyebrow,.meta,.label,.chip,.footer{font-family:var(--mono)}.brand{font-size:12px;letter-spacing:1.5px;font-weight:500}.nav-links{display:flex;gap:22px;font-size:12px;color:var(--muted)}.nav-links a:hover{color:var(--accent)}.wrap{width:min(1120px,88vw);margin:auto}.hero{padding:70px 0 28px}.eyebrow{font-size:10px;letter-spacing:2px;color:var(--accent);text-transform:uppercase}.hero h1{font-size:clamp(42px,7vw,82px);line-height:.98;letter-spacing:-5px;margin:18px 0 16px;font-weight:800}.hero h1 span{color:var(--accent)}.intro{max-width:650px;color:var(--muted);font-size:15px;line-height:1.8}.meta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.chip{font-size:10px;padding:8px 11px;border:1px solid var(--line);border-radius:99px;background:#ffffff90}.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;padding:24px 0 75px}.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:25px;min-width:0;box-shadow:0 8px 30px #24201808;transition:transform .25s,box-shadow .25s}.card:hover{transform:translateY(-4px);box-shadow:0 18px 38px #24201812}.overview{grid-column:span 7;min-height:250px}.objective{grid-column:span 5;background:var(--soft);border-color:#d8d1ff}.process{grid-column:span 4}.logic{grid-column:span 4;background:var(--dark);color:white;border-color:var(--dark)}.output{grid-column:span 4}.resources{grid-column:span 7;background:#e9eee8;border-color:#dce4da}.reflection{grid-column:span 5}.card-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:24px}.label{font-size:10px;letter-spacing:1.3px;color:var(--muted)}.number{font:500 11px var(--mono);color:var(--accent)}h2{font-size:21px;letter-spacing:-.7px;margin:0 0 12px}p{line-height:1.75}.card p{font-size:13px;color:var(--muted);margin:0}.objective p{color:#625b82}.metric{font-size:clamp(44px,6vw,66px);font-weight:800;letter-spacing:-4px;margin:14px 0 3px}.metric small{font-size:15px;letter-spacing:0;color:var(--muted);font-weight:600}.mini-list{padding-left:18px;margin:0;color:var(--muted);font-size:12px;line-height:2}.logic p{color:#b9b9c4}.logic .label{color:#aaa8ba}.logic .logic-line{font:12px/2 var(--mono);color:#c7bdff;margin-top:12px}.terminal{background:#101116;color:#e9e9ef;border-radius:13px;padding:16px;font:11px/1.9 var(--mono);overflow:auto;white-space:pre}.terminal .dim{color:#8b8b99}.terminal .hi{color:#b7aaff}.resource-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.resource-links a{display:inline-flex;padding:11px 14px;border-radius:99px;background:var(--ink);color:white;font:10px var(--mono);transition:.2s}.resource-links a.secondary{background:white;color:var(--ink);border:1px solid var(--line)}.resource-links a:hover{background:var(--accent);color:white}.footer{border-top:1px solid var(--line);padding:24px 6vw;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:10px;color:var(--muted)}.footer a{color:var(--accent)}
+@media(max-width:760px){.nav{height:65px}.nav-links{gap:12px;font-size:10px}.hero{padding-top:48px}.hero h1{letter-spacing:-3px}.grid{grid-template-columns:1fr}.card,.overview,.objective,.process,.logic,.output,.resources,.reflection{grid-column:1}.card{padding:21px}.footer{line-height:1.8}}
+</style>
+</head>
+<body>
+<header class="nav"><a class="brand" href="index.html">JCE / DIGITAL PORTFOLIO</a><nav class="nav-links"><a href="coursework.html">WORK ARCHIVE</a><a href="index.html">HOME ↗</a></nav></header>
+<main class="wrap">
+<section class="hero"><p class="eyebrow">ACADEMIC WORK / LAB ENTRY 001</p><h1>3×3 MATRIX<br><span>CALCULATOR.</span></h1><p class="intro">A Java console program that reads nine single-digit values, arranges them in a 3×3 matrix, and calculates the sum of every row, every column, and both diagonals.</p><div class="meta-row"><span class="chip">JAVA</span><span class="chip">2D ARRAYS</span><span class="chip">NATIONAL UNIVERSITY CLARK</span><span class="chip">BSIT</span></div></section>
+<section class="grid">
+<article class="card overview"><div class="card-top"><span class="label">01 / PROJECT OVERVIEW</span><span class="number">LAB_001</span></div><h2>About this activity</h2><p>This activity demonstrates how a two-dimensional array stores values in rows and columns. The program uses nested loops to collect input, validates that every value is from 0 to 9, and computes the required totals.</p><div class="metric">3 × 3 <small>matrix size</small></div></article>
+<article class="card objective"><div class="card-top"><span class="label">02 / OBJECTIVE</span><span class="number">GOAL</span></div><h2>What the program does</h2><p>Accept nine valid numbers, display them in matrix form, calculate row and column totals, calculate two diagonal totals, then let the user choose whether to run the program again.</p></article>
+<article class="card process"><div class="card-top"><span class="label">03 / WORKFLOW</span><span class="number">STEPS</span></div><h2>Program flow</h2><ol class="mini-list"><li>Declare a 3×3 integer array.</li><li>Read and validate nine inputs.</li><li>Calculate row and column sums.</li><li>Calculate both diagonal sums.</li><li>Display results and ask to retry.</li></ol></article>
+<article class="card logic"><div class="card-top"><span class="label">04 / CORE LOGIC</span><span class="number">JAVA</span></div><h2>Array calculations</h2><p>Nested loops visit each matrix element. The indexes identify whether a value belongs to a row, column, or diagonal.</p><div class="logic-line">rowSum[i] += matrix[i][j];<br>colSum[j] += matrix[i][j];<br>if (i == j) { ... }<br>if (i + j == 2) { ... }</div></article>
+<article class="card output"><div class="card-top"><span class="label">05 / SAMPLE OUTPUT</span><span class="number">PREVIEW</span></div><div class="terminal"><span class="dim">Input values: 1 to 9</span>
+Col 1   Col 2   Col 3   Row Sum
+1       2       3       6
+4       5       6       15
+7       8       9       24
+
+Column Sums:
+12      15      18
+
+Diagonal Sum 1: 15
+Diagonal Sum 2: 15</div><p style="margin-top:12px;font-size:10px">Illustrative sample based on inputs 1–9.</p></article>
+<article class="card resources"><div class="card-top"><span class="label">06 / PROJECT FILES</span><span class="number">OPEN</span></div><h2>Explore the materials</h2><p>View the complete Java source code or read the activity documentation, including the procedure and sample run.</p><div class="resource-links"><a href="labs/Matrix.java" target="_blank" rel="noopener">VIEW SOURCE CODE ↗</a><a class="secondary" href="labs/matrix-lab.md" target="_blank" rel="noopener">READ DOCUMENTATION ↗</a></div></article>
+<article class="card reflection"><div class="card-top"><span class="label">07 / LEARNING NOTE</span><span class="number">REFLECTION</span></div><h2>What I practiced</h2><p>This activity helped me practice two-dimensional arrays, nested loops, input validation, and using array indexes to calculate different totals. It also showed how one loop structure can process several parts of a matrix.</p></article>
+</section>
+</main>
+<footer class="footer"><span>JERMAIN C ENGO // BSIT</span><span>LAB 001 · MATRIX CALCULATOR</span><a href="coursework.html">← BACK TO WORK ARCHIVE</a></footer>
+</body></html>
