@@ -22,7 +22,7 @@ if(host&&canvas){
  const violet=new THREE.PointLight(0x8760ff,24,8);violet.position.set(3,1,-3);scene.add(violet);
  const root=new THREE.Group();scene.add(root);
  const mat=(color,roughness=.62,metalness=0)=>new THREE.MeshStandardMaterial({color,roughness,metalness});
- const skin=mat(0xf0bd9b),shirt=mat(0xeaf2f8),shirtDark=mat(0x173d72),pants=mat(0x10264a),hair=mat(0x171923),hairHi=mat(0x303344),shoe=mat(0x0b1730),black=mat(0x101827),white=mat(0xf2f3eb),iris=mat(0x34251d),gold=mat(0xc6a65b,.32,.65);
+ const skin=mat(0xf0bd9b),shirt=mat(0x2468b5),shirtDark=mat(0x173d72),pants=mat(0x10264a),hair=mat(0x171923),hairHi=mat(0x303344),shoe=mat(0x0b1730),black=mat(0x101827),white=mat(0xf2f3eb),iris=mat(0x34251d),gold=mat(0xc6a65b,.32,.65);
  function ball(parent,m,x,y,z,sx,sy,sz){const o=new THREE.Mesh(new THREE.SphereGeometry(1,32,24),m);o.position.set(x,y,z);o.scale.set(sx,sy,sz);o.castShadow=true;o.receiveShadow=true;parent.add(o);return o}
  function capsule(parent,m,a,b,r){const A=new THREE.Vector3(...a),B=new THREE.Vector3(...b),d=new THREE.Vector3().subVectors(B,A);const o=new THREE.Mesh(new THREE.CapsuleGeometry(r,Math.max(.01,d.length()-2*r),6,16),m);o.position.copy(A.add(B).multiplyScalar(.5));o.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),d.normalize());o.castShadow=true;o.receiveShadow=true;parent.add(o);return o}
  function box(parent,m,x,y,z,sx,sy,sz,rx=0,ry=0,rz=0){const o=new THREE.Mesh(new THREE.BoxGeometry(sx,sy,sz),m);o.position.set(x,y,z);o.rotation.set(rx,ry,rz);o.castShadow=true;o.receiveShadow=true;parent.add(o);return o}
@@ -81,14 +81,14 @@ if(host&&canvas){
  // black cross-body sling strap from shoulder to hip
  const strapCurve=new THREE.CatmullRomCurve3([new THREE.Vector3(-.42,.2,.43),new THREE.Vector3(-.28,-.18,.51),new THREE.Vector3(-.02,-.55,.5),new THREE.Vector3(.25,-.92,.38),new THREE.Vector3(.42,-1.18,.25)]);
  const strap=new THREE.Mesh(new THREE.TubeGeometry(strapCurve,48,.075,12,false),black);strap.castShadow=true;root.add(strap);
- // NU school badge on the left chest, kept clear of the center placket
- const badge=box(root,shirtDark,-.27,-.28,.468,.25,.27,.035,0,0,-.06);
- box(root,white,-.27,-.28,.49,.17,.035,.012);
+ // NU logo badge on the upper-right chest (character-facing front)
+ const badge=box(root,shirtDark,.27,-.28,.468,.25,.27,.035,0,0,.06);
+ box(root,white,.27,-.28,.49,.17,.035,.012);
  // readable NU monogram on the uniform badge
  const logoCanvas=document.createElement('canvas');logoCanvas.width=256;logoCanvas.height=128;
  const logoCtx=logoCanvas.getContext('2d');logoCtx.clearRect(0,0,256,128);logoCtx.fillStyle='#ffffff';logoCtx.font='bold 76px Arial';logoCtx.textAlign='center';logoCtx.textBaseline='middle';logoCtx.fillText('NU',128,66);
  const logoTex=new THREE.CanvasTexture(logoCanvas);logoTex.colorSpace=THREE.SRGBColorSpace;
- const logo=new THREE.Mesh(new THREE.PlaneGeometry(.2,.1),new THREE.MeshBasicMaterial({map:logoTex,transparent:true,side:THREE.DoubleSide}));logo.position.set(-.27,-.28,.515);logo.rotation.z=-.08;root.add(logo);
+ const logo=new THREE.Mesh(new THREE.PlaneGeometry(.2,.1),new THREE.MeshBasicMaterial({map:logoTex,transparent:true,side:THREE.DoubleSide}));logo.position.set(.27,-.28,.515);logo.rotation.z=.08;root.add(logo);
  // bracelet on right wrist
  for(let i=0;i<9;i++){const a=i/9*Math.PI*2;const bead=new THREE.Mesh(new THREE.SphereGeometry(.035,12,10),mat([0xd6c79b,0x67a98e,0xe8e1c8,0x8d9bb4][i%4],.28));bead.position.set(.68+Math.cos(a)*.16,-.91+Math.sin(a)*.14,.12);root.add(bead)}
  // checkered scarf fabric texture
