@@ -22,20 +22,20 @@ if(host&&canvas){
  const violet=new THREE.PointLight(0x8760ff,24,8);violet.position.set(3,1,-3);scene.add(violet);
  const root=new THREE.Group();scene.add(root);
  const mat=(color,roughness=.62,metalness=0)=>new THREE.MeshStandardMaterial({color,roughness,metalness});
- const skin=mat(0xf0bd9b),shirt=mat(0x2468b5),shirtDark=mat(0x173d72),pants=mat(0x10264a),hair=mat(0x171923),hairHi=mat(0x303344),shoe=mat(0x0b1730),black=mat(0x101827),white=mat(0xf2f3eb),iris=mat(0x34251d),gold=mat(0xc6a65b,.32,.65);
+ const skin=mat(0xf0bd9b),shirt=mat(0x2468b5),shirtDark=mat(0x173d72),pants=mat(0x10264a),hair=mat(0x171923),hairHi=mat(0x303344),shoe=mat(0x0b1730),black=mat(0x101827),white=mat(0xf2f3eb),iris=mat(0x34251d);
  function ball(parent,m,x,y,z,sx,sy,sz){const o=new THREE.Mesh(new THREE.SphereGeometry(1,32,24),m);o.position.set(x,y,z);o.scale.set(sx,sy,sz);o.castShadow=true;o.receiveShadow=true;parent.add(o);return o}
  function capsule(parent,m,a,b,r){const A=new THREE.Vector3(...a),B=new THREE.Vector3(...b),d=new THREE.Vector3().subVectors(B,A);const o=new THREE.Mesh(new THREE.CapsuleGeometry(r,Math.max(.01,d.length()-2*r),6,16),m);o.position.copy(A.add(B).multiplyScalar(.5));o.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),d.normalize());o.castShadow=true;o.receiveShadow=true;parent.add(o);return o}
  function box(parent,m,x,y,z,sx,sy,sz,rx=0,ry=0,rz=0){const o=new THREE.Mesh(new THREE.BoxGeometry(sx,sy,sz),m);o.position.set(x,y,z);o.rotation.set(rx,ry,rz);o.castShadow=true;o.receiveShadow=true;parent.add(o);return o}
  // legs and shoes
- capsule(root,pants,[-.25,-1.45,0],[-.27,-.45,0],.19);
- capsule(root,pants,[.25,-1.45,0],[.27,-.45,0],.19);
- ball(root,shoe,-.28,-1.52,.16,.24,.13,.38);ball(root,shoe,.28,-1.52,.16,.24,.13,.38);
+ capsule(root,pants,[-.25,-1.43,.04],[-.27,-.78,.04],.19);
+ capsule(root,pants,[.25,-1.43,.04],[.27,-.78,.04],.19);
+ ball(root,shoe,-.28,-1.49,.20,.24,.13,.38);ball(root,shoe,.28,-1.49,.20,.24,.13,.38);
  // NU-style short-sleeve polo shirt: shaped torso, sleeves, collar and button placket
- const torso= new THREE.Mesh(new THREE.CylinderGeometry(.39,.48,.88,32,1,false),shirt);
- torso.position.set(0,-.62,0);torso.castShadow=true;torso.receiveShadow=true;root.add(torso);
+ const torso= new THREE.Mesh(new THREE.CylinderGeometry(.39,.45,.68,32,1,false),shirt);
+ torso.position.set(0,-.50,0);torso.castShadow=true;torso.receiveShadow=true;root.add(torso);
  // slightly rounded lower hem and shoulder seam
- const hem= new THREE.Mesh(new THREE.TorusGeometry(.435,.018,8,48),shirtDark);
- hem.rotation.x=Math.PI/2;hem.position.set(0,-1.055,0);root.add(hem);
+ const hem= new THREE.Mesh(new THREE.TorusGeometry(.415,.018,8,48),shirtDark);
+ hem.rotation.x=Math.PI/2;hem.position.set(0,-.85,0);root.add(hem);
  capsule(root,shirt,[-.39,-.29,0],[-.62,-.58,0],.19);
  capsule(root,shirt,[.39,-.29,0],[.62,-.58,0],.19);
  // dark navy sleeve bands
@@ -82,32 +82,18 @@ if(host&&canvas){
  const strapCurve=new THREE.CatmullRomCurve3([new THREE.Vector3(-.42,.2,.43),new THREE.Vector3(-.28,-.18,.51),new THREE.Vector3(-.02,-.55,.5),new THREE.Vector3(.25,-.92,.38),new THREE.Vector3(.42,-1.18,.25)]);
  const strap=new THREE.Mesh(new THREE.TubeGeometry(strapCurve,48,.075,12,false),black);strap.castShadow=true;root.add(strap);
  // NU logo badge on the upper-right chest (character-facing front)
- const badge=box(root,shirtDark,.27,-.28,.468,.25,.27,.035,0,0,.06);
- box(root,white,.27,-.28,.49,.17,.035,.012);
+ const badge=box(root,shirtDark,.27,-.28,.475,.29,.25,.035,0,0,.06);
  // readable NU monogram on the uniform badge
- const logoCanvas=document.createElement('canvas');logoCanvas.width=256;logoCanvas.height=128;
- const logoCtx=logoCanvas.getContext('2d');logoCtx.clearRect(0,0,256,128);logoCtx.fillStyle='#ffffff';logoCtx.font='bold 76px Arial';logoCtx.textAlign='center';logoCtx.textBaseline='middle';logoCtx.fillText('NU',128,66);
+ const logoCanvas=document.createElement('canvas');logoCanvas.width=320;logoCanvas.height=160;
+ const logoCtx=logoCanvas.getContext('2d');logoCtx.clearRect(0,0,256,128);logoCtx.fillStyle='#ffffff';logoCtx.font='bold 112px Arial';logoCtx.textAlign='center';logoCtx.textBaseline='middle';logoCtx.fillText('NU',160,82);
  const logoTex=new THREE.CanvasTexture(logoCanvas);logoTex.colorSpace=THREE.SRGBColorSpace;
- const logo=new THREE.Mesh(new THREE.PlaneGeometry(.2,.1),new THREE.MeshBasicMaterial({map:logoTex,transparent:true,side:THREE.DoubleSide}));logo.position.set(.27,-.28,.515);logo.rotation.z=.08;root.add(logo);
+ const logo=new THREE.Mesh(new THREE.PlaneGeometry(.25,.125),new THREE.MeshBasicMaterial({map:logoTex,transparent:true,side:THREE.DoubleSide}));logo.position.set(.27,-.28,.505);logo.rotation.z=.08;root.add(logo);
  // bracelet on right wrist
  for(let i=0;i<9;i++){const a=i/9*Math.PI*2;const bead=new THREE.Mesh(new THREE.SphereGeometry(.035,12,10),mat([0xd6c79b,0x67a98e,0xe8e1c8,0x8d9bb4][i%4],.28));bead.position.set(.68+Math.cos(a)*.16,-.91+Math.sin(a)*.14,.12);root.add(bead)}
- // checkered scarf fabric texture
- const c=document.createElement('canvas');c.width=256;c.height=256;const ctx=c.getContext('2d');ctx.fillStyle='#deded7';ctx.fillRect(0,0,256,256);ctx.strokeStyle='#222b32';ctx.lineWidth=18;
- for(let p=-256;p<512;p+=64){ctx.beginPath();ctx.moveTo(p,0);ctx.lineTo(p+256,256);ctx.stroke();ctx.beginPath();ctx.moveTo(p,256);ctx.lineTo(p+256,0);ctx.stroke()}
- ctx.strokeStyle='#89939a';ctx.lineWidth=5;for(let p=-256;p<512;p+=32){ctx.beginPath();ctx.moveTo(p,0);ctx.lineTo(p+256,256);ctx.stroke()}
- const tex=new THREE.CanvasTexture(c);tex.colorSpace=THREE.SRGBColorSpace;tex.wrapS=tex.wrapT=THREE.RepeatWrapping;tex.repeat.set(1,1);
- const scarfMat=new THREE.MeshStandardMaterial({map:tex,roughness:1,side:THREE.DoubleSide});
- // draped hood panels around head and down shoulders, modeled as curved cloth meshes
- function clothPanel(points){const shape=new THREE.Shape();shape.moveTo(points[0][0],points[0][1]);for(let i=1;i<points.length;i++)shape.lineTo(points[i][0],points[i][1]);shape.closePath();const g=new THREE.ShapeGeometry(shape,24);const mesh=new THREE.Mesh(g,scarfMat);mesh.position.z=.38;mesh.castShadow=true;root.add(mesh);return mesh}
- // head covering around crown and long hanging sides
- const hood=ball(root,scarfMat,0,1.52,-.12,.66,.42,.54);hood.material=scarfMat;
- clothPanel([[-.48,1.63],[-.68,1.35],[-.78,.82],[-.63,.12],[-.4,.22],[-.32,.94],[-.24,1.4]]);
- clothPanel([[.45,1.63],[.68,1.34],[.72,.86],[.58,.06],[.35,.2],[.28,.92],[.24,1.4]]);
- // scarf fringe threads
- const thread=mat(0xd6d5cc);for(let side of [-1,1])for(let i=0;i<7;i++){const x=side*(.48+i*.025);capsule(root,thread,[x,.22,.405],[x+side*.025,.08-(i%3)*.04,.41],.009)}
+ // clean anime hair only: no scarf or checkered head covering
  // subtle floating ring behind the character
  const ring=new THREE.Mesh(new THREE.TorusGeometry(1.45,.012,8,100),new THREE.MeshBasicMaterial({color:0x50ddff,transparent:true,opacity:.6}));ring.position.set(0,.15,-.85);ring.rotation.x=.25;root.add(ring);
- const floor=new THREE.Mesh(new THREE.CircleGeometry(1.35,64),new THREE.MeshBasicMaterial({color:0x123e67,transparent:true,opacity:.22}));floor.rotation.x=-Math.PI/2;floor.position.y=-1.67;scene.add(floor);
+ const floor=new THREE.Mesh(new THREE.CircleGeometry(1.1,64),new THREE.MeshBasicMaterial({color:0x123e67,transparent:true,opacity:.22}));floor.rotation.x=-Math.PI/2;floor.position.y=-1.62;scene.add(floor);
  function resize(){const w=host.clientWidth,h=host.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix()}
  if('ResizeObserver' in window){new ResizeObserver(resize).observe(host)}else{window.addEventListener('resize',resize)}resize();loading?.remove();
  let targetX=0,targetY=0,rotX=0,rotY=0,drag=false,px=0,py=0;
