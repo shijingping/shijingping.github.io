@@ -21,74 +21,59 @@
  --dark:rgba(4,10,25,.92);
 }
 html,body{background:#050a18!important;color:var(--ink)}
-body{
- background:
-  radial-gradient(ellipse at 16% 10%,rgba(0,170,255,.2),transparent 32%),
-  radial-gradient(ellipse at 84% 24%,rgba(104,77,255,.23),transparent 34%),
-  linear-gradient(145deg,#050a18 0%,#08152e 52%,#080b20 100%)!important;
- background-attachment:fixed!important;
-}
-body:before{
- content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.22;
- background-image:linear-gradient(rgba(85,234,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(85,234,255,.12) 1px,transparent 1px);
- background-size:58px 58px;transform:perspective(700px) rotateX(62deg) scale(1.8);transform-origin:center bottom;
- mask-image:linear-gradient(to bottom,transparent 8%,black 90%);
-}
-.site-header,.topbar,.nav{
- background:rgba(4,10,26,.88)!important;border-bottom:1px solid var(--line)!important;
- backdrop-filter:blur(20px) saturate(150%);-webkit-backdrop-filter:blur(20px) saturate(150%);
- box-shadow:0 12px 35px rgba(0,0,0,.28);
-}
+body{background:radial-gradient(ellipse at 16% 10%,rgba(0,170,255,.2),transparent 32%),radial-gradient(ellipse at 84% 24%,rgba(104,77,255,.23),transparent 34%),linear-gradient(145deg,#050a18 0%,#08152e 52%,#080b20 100%)!important;background-attachment:fixed!important}
+body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.22;background-image:linear-gradient(rgba(85,234,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(85,234,255,.12) 1px,transparent 1px);background-size:58px 58px;transform:perspective(700px) rotateX(62deg) scale(1.8);transform-origin:center bottom;mask-image:linear-gradient(to bottom,transparent 8%,black 90%)}
+.site-header,.topbar,.nav{background:rgba(4,10,26,.88)!important;border-bottom:1px solid var(--line)!important;backdrop-filter:blur(20px) saturate(150%);-webkit-backdrop-filter:blur(20px) saturate(150%);box-shadow:0 12px 35px rgba(0,0,0,.28)}
 .brand-mark,.archive-seal,.about-stamp{border-color:var(--cyan)!important;color:var(--cyan)!important;box-shadow:0 0 24px rgba(85,234,255,.22),inset 0 0 18px rgba(85,234,255,.08)}
 .nav-links a:hover,.top-actions a:hover,.backline a,.footer a,.back-top{color:var(--cyan)!important;text-shadow:0 0 14px rgba(85,234,255,.5)}
 .eyebrow,.prompt,.filebar,.terminal-title,.hero-meta strong,.output-head,.number,.label,.crest-live{color:var(--cyan)!important}
-h1,h2,h3,.hero h1{color:var(--ink)}
-h2 span,.outline-text,.hero h1 span,.glow{color:#a99aff!important;text-shadow:0 0 24px rgba(139,112,255,.42)}
+h1,h2,h3,.hero h1{color:var(--ink)}h2 span,.outline-text,.hero h1 span,.glow{color:#a99aff!important;text-shadow:0 0 24px rgba(139,112,255,.42)}
 .hero-visual,.hero-grid,.arsenal-grid,.lab-grid,.file-grid,.grid{perspective:1200px}
-.crest-card,.terminal-window,.file-card,.output,.filebar,.card,.arsenal-card,.lab-card,.contact-panel,.about-stamp,.profile-stats div{
- background:linear-gradient(145deg,rgba(24,48,91,.9),rgba(6,16,39,.94))!important;
- border:1px solid rgba(85,190,255,.38)!important;
- box-shadow:inset 0 1px 0 rgba(255,255,255,.13),0 22px 52px rgba(0,0,0,.42),0 0 26px rgba(35,160,255,.1);
- backdrop-filter:blur(16px) saturate(145%);-webkit-backdrop-filter:blur(16px) saturate(145%);
- transform-style:preserve-3d;
-}
-.crest-card{transform:rotateY(-9deg) rotateX(5deg);transition:transform .55s ease,box-shadow .55s ease}
-.hero-visual:hover .crest-card{transform:rotateY(7deg) rotateX(-3deg) translateY(-9px);box-shadow:0 30px 70px rgba(0,0,0,.5),0 0 42px rgba(85,234,255,.2)}
-.orbit{border-color:rgba(85,234,255,.4)!important;box-shadow:0 0 20px rgba(85,234,255,.12);animation:orbit3d 10s ease-in-out infinite}
-.orbit-two{border-color:rgba(155,131,255,.55)!important;animation-delay:-5s}
+.crest-card,.terminal-window,.file-card,.output,.filebar,.card,.arsenal-card,.lab-card,.contact-panel,.about-stamp,.profile-stats div{background:linear-gradient(145deg,rgba(24,48,91,.9),rgba(6,16,39,.94))!important;border:1px solid rgba(85,190,255,.38)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.13),0 22px 52px rgba(0,0,0,.42),0 0 26px rgba(35,160,255,.1);backdrop-filter:blur(16px) saturate(145%);-webkit-backdrop-filter:blur(16px) saturate(145%);transform-style:preserve-3d}
+.crest-card{transform:rotateY(-9deg) rotateX(5deg);transition:transform .55s ease,box-shadow .55s ease}.hero-visual:hover .crest-card{transform:rotateY(7deg) rotateX(-3deg) translateY(-9px);box-shadow:0 30px 70px rgba(0,0,0,.5),0 0 42px rgba(85,234,255,.2)}
+.orbit{border-color:rgba(85,234,255,.4)!important;box-shadow:0 0 20px rgba(85,234,255,.12);animation:orbit3d 10s ease-in-out infinite}.orbit-two{border-color:rgba(155,131,255,.55)!important;animation-delay:-5s}
 @keyframes orbit3d{0%,100%{transform:rotate(-25deg) translateY(0)}50%{transform:rotate(-14deg) translateY(-15px)}}
-.floating-tag,.status,.chip,.tags span,.tag-row span{
- background:rgba(5,18,43,.9)!important;border:1px solid rgba(85,234,255,.48)!important;color:var(--cyan)!important;
- box-shadow:0 10px 28px rgba(0,0,0,.28),0 0 18px rgba(85,234,255,.1);
-}
-.btn,.btn-primary,.file-links a,.resource-links a,.resource-links a.secondary,.tool-button{
- border:1px solid rgba(85,234,255,.48)!important;border-radius:12px!important;
- background:linear-gradient(125deg,rgba(13,127,184,.42),rgba(91,67,190,.5))!important;color:#effaff!important;
- box-shadow:0 9px 26px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.14);
- transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease,filter .3s ease;
-}
-.btn-primary,.file-links a:first-child,.resource-links a:first-child{
- background:linear-gradient(110deg,#43eaff,#7487ff 58%,#a17aff)!important;color:#061126!important;
-}
-.btn:hover,.btn-primary:hover,.file-links a:hover,.resource-links a:hover,.tool-button:hover{
- transform:translateY(-5px) perspective(600px) rotateX(5deg)!important;
- border-color:#a18cff!important;box-shadow:0 18px 38px rgba(0,0,0,.38),0 0 26px rgba(85,234,255,.22);filter:brightness(1.1);
-}
+.floating-tag,.status,.chip,.tags span,.tag-row span{background:rgba(5,18,43,.9)!important;border:1px solid rgba(85,234,255,.48)!important;color:var(--cyan)!important;box-shadow:0 10px 28px rgba(0,0,0,.28),0 0 18px rgba(85,234,255,.1)}
+.btn,.btn-primary,.file-links a,.resource-links a,.resource-links a.secondary,.tool-button{border:1px solid rgba(85,234,255,.48)!important;border-radius:12px!important;background:linear-gradient(125deg,rgba(13,127,184,.42),rgba(91,67,190,.5))!important;color:#effaff!important;box-shadow:0 9px 26px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.14);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease,filter .3s ease}
+.btn-primary,.file-links a:first-child,.resource-links a:first-child{background:linear-gradient(110deg,#43eaff,#7487ff 58%,#a17aff)!important;color:#061126!important}
+.btn:hover,.btn-primary:hover,.file-links a:hover,.resource-links a:hover,.tool-button:hover{transform:translateY(-5px) perspective(600px) rotateX(5deg)!important;border-color:#a18cff!important;box-shadow:0 18px 38px rgba(0,0,0,.38),0 0 26px rgba(85,234,255,.22);filter:brightness(1.1)}
 .arsenal-card,.lab-card,.file-card,.card{transition:transform .38s ease,border-color .38s ease,box-shadow .38s ease}
-.arsenal-card:hover,.lab-card:hover,.file-card:hover,.card:hover{
- transform:translateY(-10px) rotateX(3deg) rotateY(-2deg)!important;
- border-color:rgba(85,234,255,.8)!important;
- box-shadow:0 28px 60px rgba(0,0,0,.45),0 0 34px rgba(85,234,255,.16)!important;
-}
+.arsenal-card:hover,.lab-card:hover,.file-card:hover,.card:hover{transform:translateY(-10px) rotateX(3deg) rotateY(-2deg)!important;border-color:rgba(85,234,255,.8)!important;box-shadow:0 28px 60px rgba(0,0,0,.45),0 0 34px rgba(85,234,255,.16)!important}
 .arsenal-icon,.file-icon,.crest-symbol{color:var(--cyan)!important;text-shadow:0 0 22px rgba(85,234,255,.58)}
 .tag-row span,.tags span{color:#c0b3ff!important;border-color:rgba(155,131,255,.58)!important}
 .quote-section{background:radial-gradient(ellipse at center,rgba(44,105,190,.24),transparent 65%),rgba(4,10,25,.72)!important;border-color:var(--line)!important}
-.progress-bar{background:linear-gradient(90deg,#55eaff,#7186ff,#a17aff)!important;box-shadow:0 0 16px #55eaff}
-.scanlines{opacity:.025!important}.noise{opacity:.02!important}
-.terminal,.output,.output-head{background-color:rgba(3,10,26,.9)!important;border-color:var(--line)!important}
-.terminal .hi,pre{color:#9cecff!important}
+.progress-bar{background:linear-gradient(90deg,#55eaff,#7186ff,#a17aff)!important;box-shadow:0 0 16px #55eaff}.scanlines{opacity:.025!important}.noise{opacity:.02!important}
+.terminal,.output,.output-head{background-color:rgba(3,10,26,.9)!important;border-color:var(--line)!important}.terminal .hi,pre{color:#9cecff!important}
 .footer,.site-footer{background:rgba(4,10,25,.88)!important;border-color:var(--line)!important;color:var(--muted)!important}
 .crest-card,.terminal-window{animation:coreFloat 7s ease-in-out infinite}
 @keyframes coreFloat{0%,100%{filter:drop-shadow(0 0 8px rgba(85,234,255,.06))}50%{filter:drop-shadow(0 0 20px rgba(125,103,255,.18))}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
 
+</style>
+</head>
+<body>
+<header class="nav"><a class="brand" href="index.html">JCE / DIGITAL PORTFOLIO</a><nav class="nav-links"><a href="coursework.html">WORK ARCHIVE</a><a href="index.html">HOME ↗</a></nav></header>
+<main class="wrap">
+<section class="hero"><p class="eyebrow">ACADEMIC WORK / LAB ENTRY 001</p><h1>3×3 MATRIX<br><span>CALCULATOR.</span></h1><p class="intro">A Java console program that reads nine single-digit values, arranges them in a 3×3 matrix, and calculates the sum of every row, every column, and both diagonals.</p><div class="meta-row"><span class="chip">JAVA</span><span class="chip">2D ARRAYS</span><span class="chip">NATIONAL UNIVERSITY CLARK</span><span class="chip">BSIT</span></div></section>
+<section class="grid">
+<article class="card overview"><div class="card-top"><span class="label">01 / PROJECT OVERVIEW</span><span class="number">LAB_001</span></div><h2>About this activity</h2><p>This activity demonstrates how a two-dimensional array stores values in rows and columns. The program uses nested loops to collect input, validates that every value is from 0 to 9, and computes the required totals.</p><div class="metric">3 × 3 <small>matrix size</small></div></article>
+<article class="card objective"><div class="card-top"><span class="label">02 / OBJECTIVE</span><span class="number">GOAL</span></div><h2>What the program does</h2><p>Accept nine valid numbers, display them in matrix form, calculate row and column totals, calculate two diagonal totals, then let the user choose whether to run the program again.</p></article>
+<article class="card process"><div class="card-top"><span class="label">03 / WORKFLOW</span><span class="number">STEPS</span></div><h2>Program flow</h2><ol class="mini-list"><li>Declare a 3×3 integer array.</li><li>Read and validate nine inputs.</li><li>Calculate row and column sums.</li><li>Calculate both diagonal sums.</li><li>Display results and ask to retry.</li></ol></article>
+<article class="card logic"><div class="card-top"><span class="label">04 / CORE LOGIC</span><span class="number">JAVA</span></div><h2>Array calculations</h2><p>Nested loops visit each matrix element. The indexes identify whether a value belongs to a row, column, or diagonal.</p><div class="logic-line">rowSum[i] += matrix[i][j];<br>colSum[j] += matrix[i][j];<br>if (i == j) { ... }<br>if (i + j == 2) { ... }</div></article>
+<article class="card output"><div class="card-top"><span class="label">05 / SAMPLE OUTPUT</span><span class="number">PREVIEW</span></div><div class="terminal"><span class="dim">Input values: 1 to 9</span>
+Col 1   Col 2   Col 3   Row Sum
+1       2       3       6
+4       5       6       15
+7       8       9       24
+
+Column Sums:
+12      15      18
+
+Diagonal Sum 1: 15
+Diagonal Sum 2: 15</div><p style="margin-top:12px;font-size:10px">Illustrative sample based on inputs 1–9.</p></article>
+<article class="card resources"><div class="card-top"><span class="label">06 / PROJECT FILES</span><span class="number">OPEN</span></div><h2>Explore the materials</h2><p>View the complete Java source code or read the activity documentation, including the procedure and sample run.</p><div class="resource-links"><a href="labs/Matrix.java" target="_blank" rel="noopener">VIEW SOURCE CODE ↗</a><a class="secondary" href="labs/matrix-lab.md" target="_blank" rel="noopener">READ DOCUMENTATION ↗</a></div></article>
+<article class="card reflection"><div class="card-top"><span class="label">07 / LEARNING NOTE</span><span class="number">REFLECTION</span></div><h2>What I practiced</h2><p>This activity helped me practice two-dimensional arrays, nested loops, input validation, and using array indexes to calculate different totals. It also showed how one loop structure can process several parts of a matrix.</p></article>
+</section>
+</main>
+<footer class="footer"><span>JERMAIN C ENGO // BSIT</span><span>LAB 001 · MATRIX CALCULATOR</span><a href="coursework.html">← BACK TO WORK ARCHIVE</a></footer>
+</body></html>
