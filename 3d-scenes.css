@@ -26,3 +26,16 @@
 .avatar-controls span{color:#55eaff;margin-left:8px}
 @media(max-width:850px){.avatar-pod{height:640px}.avatar-3d{height:550px}}
 @media(max-width:620px){.avatar-pod{width:100%;height:610px;transform:none}.avatar-3d{height:530px}}
+
+
+/* Interactive rotatable 3D character replacements */
+.character-rotator{position:relative;display:block;isolation:isolate;touch-action:pan-y}
+.character-rotator canvas{display:block;width:100%;height:100%;cursor:grab;touch-action:pan-y;outline:none}
+.character-rotator canvas:active{cursor:grabbing}
+.character-hint{position:absolute;left:50%;bottom:2px;transform:translateX(-50%);z-index:5;color:#8cefff;font:8px var(--mono);letter-spacing:1.2px;white-space:nowrap;pointer-events:none;text-shadow:0 0 8px #001}
+.character-home{width:100%;height:100%;min-height:500px}
+.character-home canvas{min-height:500px}
+.character-task{position:absolute;right:5px;bottom:5px;width:116px;height:205px;z-index:4;pointer-events:auto}
+.character-work{width:100%;height:100%;min-height:230px;z-index:3;pointer-events:auto}
+@media(max-width:850px){.character-task{width:105px;height:190px;right:0}.character-work{min-height:210px}}
+@media(max-width:620px){.character-home{min-height:440px}.character-home canvas{min-height:440px}.character-task{width:120px;height:190px}.character-work{min-height:205px}}
