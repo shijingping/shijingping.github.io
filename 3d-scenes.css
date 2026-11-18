@@ -79,3 +79,49 @@
   from{transform:rotate(9deg) rotateY(0deg)}
   to{transform:rotate(9deg) rotateY(360deg)}
 }
+
+
+/* Developer Workspace: pin the 3D character and rotating rings to the upper-right */
+@media(min-width:621px){
+  .terminal-body{position:relative;padding-right:280px}
+  .terminal-body .work-scene{
+    position:absolute!important;
+    top:76px!important;
+    right:24px!important;
+    left:auto!important;
+    width:230px!important;
+    height:280px!important;
+    min-height:0!important;
+    margin:0!important;
+    transform:none!important;
+    opacity:1!important;
+    display:block!important;
+    overflow:visible!important;
+    z-index:4!important;
+  }
+  .terminal-body .work-scene .work-orbit{
+    position:absolute!important;
+    left:50%!important;
+    top:50%!important;
+    z-index:1!important;
+  }
+  .terminal-body .work-scene .work-orbit.orbit-a{
+    width:215px!important;height:215px!important;
+    margin:-107.5px 0 0 -107.5px!important;
+  }
+  .terminal-body .work-scene .work-orbit.orbit-b{
+    width:175px!important;height:245px!important;
+    margin:-122.5px 0 0 -87.5px!important;
+  }
+  .terminal-body .work-scene .character-work{
+    position:absolute!important;
+    left:50%!important;top:50%!important;right:auto!important;bottom:auto!important;
+    width:180px!important;height:255px!important;min-height:0!important;
+    margin:0!important;transform:translate(-50%,-50%)!important;
+    z-index:3!important;
+  }
+  .terminal-body .work-scene .scene-caption{
+    left:50%;bottom:-2px;transform:translateX(-50%);
+    z-index:4;
+  }
+}
