@@ -57,3 +57,13 @@
 @media(max-width:620px){.avatar-3d{height:330px}.task-hero-visual{min-height:320px}.character-task{width:145px;height:255px}.work-scene{min-height:290px}}
 
 .character-load-error{position:absolute;inset:0;display:grid;place-items:center;color:#8cefff;font:10px var(--mono);letter-spacing:1px;text-align:center}
+
+
+/* Slightly enlarge only the homepage 3D character */
+.avatar-pod .character-home{
+  transform:scale(1.10);
+  transform-origin:50% 48%;
+}
+@media(max-width:620px){
+  .avatar-pod .character-home{transform:scale(1.08);transform-origin:50% 48%}
+}
