@@ -32,6 +32,67 @@ html,body{background:radial-gradient(ellipse at 80% 8%,#15244a 0%,#080f22 42%,#0
 
 /* Restore the original automatic rotation of the 1–9 matrix cube */
 .task-hero-visual .matrix-cube{animation:cubeSpin 13s linear infinite!important;will-change:transform}
+
+/* Task 01: move the complete 3D matrix scene to the upper-right, like Developer Workspace */
+@media(min-width:761px){
+  .hero{position:relative;min-height:430px;padding-right:0}
+  .hero>.eyebrow,.hero>h1,.hero>.intro,.hero>.meta-row{
+    max-width:calc(100% - 360px);
+  }
+  .task-hero-visual{
+    position:absolute!important;
+    top:76px!important;
+    right:0!important;
+    left:auto!important;
+    bottom:auto!important;
+    width:330px!important;
+    height:320px!important;
+    min-height:0!important;
+    margin:0!important;
+    display:grid!important;
+    place-items:center!important;
+    opacity:1!important;
+    transform:none!important;
+    z-index:4!important;
+    pointer-events:none;
+  }
+  .task-hero-visual .matrix-cube{
+    width:150px!important;height:150px!important;
+    transform-style:preserve-3d!important;
+    animation:cubeSpin 13s linear infinite!important;
+  }
+  .task-hero-visual .cube-face{font-size:15px!important;line-height:2.15!important}
+  .task-hero-visual .face-front{transform:translateZ(75px)!important}
+  .task-hero-visual .face-side{transform:rotateY(90deg) translateZ(75px)!important}
+  .task-hero-visual .face-top{transform:rotateX(90deg) translateZ(75px)!important}
+  .task-hero-visual .task-orbit{width:285px!important;height:140px!important}
+  .task-hero-visual .task-orbit.orbit-two{width:230px!important;height:290px!important}
+  .task-hero-visual .mini-operator{
+    width:68px!important;height:126px!important;
+    right:8px!important;bottom:18px!important;
+    transform:scale(1.35)!important;
+    transform-origin:bottom right!important;
+    animation:botFloat 4s ease-in-out infinite,operatorTurn 10s linear infinite!important;
+  }
+  .task-hero-visual .operator-head{left:15px!important;width:38px!important;height:40px!important}
+  .task-hero-visual .operator-body{top:42px!important;left:7px!important;width:52px!important;height:58px!important}
+  .task-hero-visual .operator-arm{top:49px!important;width:12px!important;height:47px!important}
+  .task-hero-visual .task-scene-label{bottom:0!important}
+}
+@media(max-width:760px){
+  .hero{position:relative}
+  .task-hero-visual{
+    position:relative!important;top:auto!important;right:auto!important;left:auto!important;
+    width:100%!important;height:280px!important;min-height:280px!important;
+    margin:12px auto 0!important;opacity:1!important;transform:none!important;
+  }
+  .task-hero-visual .matrix-cube{width:130px!important;height:130px!important}
+  .task-hero-visual .face-front{transform:translateZ(65px)!important}
+  .task-hero-visual .face-side{transform:rotateY(90deg) translateZ(65px)!important}
+  .task-hero-visual .face-top{transform:rotateX(90deg) translateZ(65px)!important}
+  .task-hero-visual .mini-operator{width:58px!important;height:108px!important;right:8%!important;bottom:24px!important}
+}
+
 </style>
 </head>
 <body>
