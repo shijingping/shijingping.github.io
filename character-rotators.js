@@ -1,4 +1,16 @@
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js';
+let THREE;
+try {
+  THREE = await import('https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js');
+} catch (primaryError) {
+  try {
+    THREE = await import('https://unpkg.com/three@0.161.0/build/three.module.js');
+  } catch (fallbackError) {
+    document.querySelectorAll('.character-rotator').forEach(el => {
+      el.innerHTML = '<div class="character-load-error">3D ENGINE COULD NOT LOAD</div>';
+    });
+    throw fallbackError;
+  }
+}
 
 const M={
  skin:new THREE.MeshStandardMaterial({color:0xe9b58f,roughness:.8}),
@@ -104,4 +116,13 @@ function init(el){
  function draw(){requestAnimationFrame(draw);const t=clock.getElapsedTime();ry+=(targetY-ry)*.1;rx+=(targetX-rx)*.1;model.rotation.y=ry+Math.sin(t*.4)*.045;model.rotation.x=rx;model.position.y=Math.sin(t*1.25)*.035;halo.rotation.z=t*.08;renderer.render(scene,camera)}
  draw();
 }
-document.querySelectorAll('.character-rotator[data-character]').forEach(init);
+document.querySelectorAll('.character-rotator[data-character]').forEach(el => {
+  try { init(el); }
+  catch (error) {
+    console.error('Character scene failed:', error);
+    const note = document.createElement('span');
+    note.className = 'character-load-error';
+    note.textContent = '3D CHARACTER ERROR — CHECK CONSOLE';
+    el.appendChild(note);
+  }
+});
