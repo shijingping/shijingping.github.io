@@ -98,3 +98,78 @@
  .work-scene{height:330px;min-height:330px;margin:12px auto}
  .work-scene .character-work{width:min(100%,330px)}
 }
+
+
+/* Placement correction for Coursework (page 2) and Task 01 */
+.work-scene{
+ position:relative!important;
+ display:flex!important;
+ align-items:center!important;
+ justify-content:center!important;
+ width:min(100%,560px)!important;
+ height:440px!important;
+ min-height:440px!important;
+ margin:26px auto 30px!important;
+ padding:0!important;
+ overflow:visible!important;
+}
+.work-scene .character-work{
+ position:relative!important;
+ inset:auto!important;
+ left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;
+ transform:none!important;
+ display:block!important;
+ flex:0 1 390px!important;
+ width:min(100%,390px)!important;
+ height:420px!important;
+ min-height:420px!important;
+ margin:0 auto!important;
+}
+.work-scene .character-work canvas{width:100%!important;height:100%!important;min-height:0!important}
+.work-scene .work-orbit{position:absolute!important;left:50%!important;top:50%!important}
+.work-scene .scene-caption{position:absolute!important;left:50%!important;bottom:0!important;transform:translateX(-50%)!important;white-space:nowrap}
+.task-hero-visual{
+ position:relative!important;
+ display:flex!important;
+ flex-direction:row!important;
+ align-items:center!important;
+ justify-content:space-evenly!important;
+ gap:12px!important;
+ width:100%!important;
+ max-width:720px!important;
+ height:410px!important;
+ min-height:410px!important;
+ margin:22px auto 12px!important;
+ padding:8px 12px 28px!important;
+ overflow:visible!important;
+}
+.task-hero-visual .matrix-cube{
+ position:relative!important;
+ left:auto!important;top:auto!important;
+ flex:0 1 230px!important;
+ width:180px!important;height:180px!important;
+ margin:0!important;
+ transform:scale(.9) rotateX(-25deg) rotateY(35deg)!important;
+}
+.task-hero-visual .task-orbit{position:absolute!important;left:32%!important;top:50%!important}
+.task-hero-visual .character-task{
+ position:relative!important;
+ inset:auto!important;
+ left:auto!important;right:auto!important;top:auto!important;bottom:auto!important;
+ transform:none!important;
+ display:block!important;
+ flex:0 1 260px!important;
+ width:260px!important;height:370px!important;
+ min-height:370px!important;
+ margin:0!important;
+}
+.task-hero-visual .character-task canvas{width:100%!important;height:100%!important;min-height:0!important}
+.task-hero-visual .task-scene-label{position:absolute!important;left:50%!important;bottom:0!important;transform:translateX(-50%)!important;white-space:nowrap}
+@media(max-width:620px){
+ .work-scene{height:350px!important;min-height:350px!important;margin:14px auto 22px!important}
+ .work-scene .character-work{flex-basis:320px!important;width:320px!important;height:340px!important;min-height:340px!important}
+ .task-hero-visual{height:320px!important;min-height:320px!important;gap:0!important;padding:4px 2px 25px!important}
+ .task-hero-visual .matrix-cube{flex-basis:125px!important;width:125px!important;height:125px!important;transform:scale(.62) rotateX(-25deg) rotateY(35deg)!important}
+ .task-hero-visual .character-task{flex-basis:180px!important;width:180px!important;height:285px!important;min-height:285px!important}
+ .task-hero-visual .task-orbit{left:30%!important}
+}
