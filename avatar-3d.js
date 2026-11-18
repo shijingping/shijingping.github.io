@@ -30,13 +30,30 @@ if(host&&canvas){
  capsule(root,pants,[-.25,-1.45,0],[-.27,-.45,0],.19);
  capsule(root,pants,[.25,-1.45,0],[.27,-.45,0],.19);
  ball(root,shoe,-.28,-1.52,.16,.24,.13,.38);ball(root,shoe,.28,-1.52,.16,.24,.13,.38);
- // uniform torso, collar, neck
- capsule(root,shirt,[0,-.22,0],[0,-1.02,0],.48);
- box(root,shirtDark,0,-.3,.43,.09,.72,.025);
+ // NU-style short-sleeve polo shirt: shaped torso, sleeves, collar and button placket
+ const torso= new THREE.Mesh(new THREE.CylinderGeometry(.39,.48,.88,32,1,false),shirt);
+ torso.position.set(0,-.62,0);torso.castShadow=true;torso.receiveShadow=true;root.add(torso);
+ // slightly rounded lower hem and shoulder seam
+ const hem= new THREE.Mesh(new THREE.TorusGeometry(.435,.018,8,48),shirtDark);
+ hem.rotation.x=Math.PI/2;hem.position.set(0,-1.055,0);root.add(hem);
+ capsule(root,shirt,[-.39,-.29,0],[-.62,-.58,0],.19);
+ capsule(root,shirt,[.39,-.29,0],[.62,-.58,0],.19);
+ // dark navy sleeve bands
+ capsule(root,shirtDark,[-.59,-.55,0],[-.66,-.64,0],.195);
+ capsule(root,shirtDark,[.59,-.55,0],[.66,-.64,0],.195);
  capsule(root,skin,[0,.34,0],[0,.62,0],.16);
- // collar
- const collarL=box(root,shirtDark,-.16,.27,.38,.2,.22,.08,-.35,0,-.25);
- const collarR=box(root,shirtDark,.16,.27,.38,.2,.22,.08,-.35,0,.25);
+ // open polo neckline and two clearly visible collar flaps facing the viewer
+ const collarShapeL=new THREE.Shape();
+ collarShapeL.moveTo(-.19,.34);collarShapeL.lineTo(-.015,.25);collarShapeL.lineTo(-.105,.02);collarShapeL.lineTo(-.29,.23);collarShapeL.closePath();
+ const collarShapeR=new THREE.Shape();
+ collarShapeR.moveTo(.19,.34);collarShapeR.lineTo(.015,.25);collarShapeR.lineTo(.105,.02);collarShapeR.lineTo(.29,.23);collarShapeR.closePath();
+ const collarMat=new THREE.MeshStandardMaterial({color:0x173d72,roughness:.7,side:THREE.DoubleSide});
+ const collarLeft=new THREE.Mesh(new THREE.ShapeGeometry(collarShapeL),collarMat);
+ const collarRight=new THREE.Mesh(new THREE.ShapeGeometry(collarShapeR),collarMat);
+ collarLeft.position.set(0,0,.475);collarRight.position.set(0,0,.475);root.add(collarLeft,collarRight);
+ // front button strip and small buttons
+ box(root,shirtDark,0,-.36,.478,.055,.62,.025);
+ for(let y of [.12,-.08,-.28,-.48,-.68])ball(root,white,.012,y,.501,.025,.025,.012);
  // head and ears
  ball(root,skin,0,1.04,.02,.53,.66,.46);
  ball(root,skin,-.53,1.02,0,.11,.17,.1);ball(root,skin,.53,1.02,0,.11,.17,.1);
@@ -64,10 +81,9 @@ if(host&&canvas){
  // black cross-body sling strap from shoulder to hip
  const strapCurve=new THREE.CatmullRomCurve3([new THREE.Vector3(-.42,.2,.43),new THREE.Vector3(-.28,-.18,.51),new THREE.Vector3(-.02,-.55,.5),new THREE.Vector3(.25,-.92,.38),new THREE.Vector3(.42,-1.18,.25)]);
  const strap=new THREE.Mesh(new THREE.TubeGeometry(strapCurve,48,.075,12,false),black);strap.castShadow=true;root.add(strap);
- // shirt buttons and NU-like blue badge
- for(let y of [-.1,-.38,-.66,-.9])ball(root,white,.02,y,.49,.025,.025,.014);
- const badge=box(root,shirtDark,-.28,-.42,.49,.27,.3,.045,0,0,-.08);
- box(root,white,-.28,-.42,.519,.19,.045,.012);
+ // NU school badge on the left chest, kept clear of the center placket
+ const badge=box(root,shirtDark,-.27,-.28,.468,.25,.27,.035,0,0,-.06);
+ box(root,white,-.27,-.28,.49,.17,.035,.012);
  // readable NU monogram on the uniform badge
  const logoCanvas=document.createElement('canvas');logoCanvas.width=256;logoCanvas.height=128;
  const logoCtx=logoCanvas.getContext('2d');logoCtx.clearRect(0,0,256,128);logoCtx.fillStyle='#ffffff';logoCtx.font='bold 76px Arial';logoCtx.textAlign='center';logoCtx.textBaseline='middle';logoCtx.fillText('NU',128,66);
