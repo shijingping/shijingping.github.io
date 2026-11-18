@@ -74,9 +74,9 @@ if(host&&canvas){
  for(const [x,y,z,sx,sy,sz,rz] of locks){const o=ball(root,hair,x,y,z,sx,sy,sz);o.rotation.z=rz}
  // side fringe tufts
  for(let i=0;i<5;i++){const x=-.35+i*.17;const o=ball(root,i%2?hairHi:hair,x,1.48+Math.sin(i*1.2)*.12,.43,.1,.24,.12);o.rotation.z=-.45+i*.22}
- // arms and hands
- capsule(root,shirt,[-.48,-.32,0],[-.72,-.92,.02],.16);
- capsule(root,shirt,[.48,-.32,0],[.68,-.87,.03],.16);
+ // exposed forearms below the short polo sleeves, plus hands
+ capsule(root,skin,[-.66,-.64,.015],[-.72,-.92,.04],.115);
+ capsule(root,skin,[.66,-.64,.015],[.68,-.87,.04],.115);
  ball(root,skin,-.72,-.98,.08,.15,.16,.14);ball(root,skin,.68,-.93,.1,.15,.16,.14);
  // black cross-body sling strap from shoulder to hip
  const strapCurve=new THREE.CatmullRomCurve3([new THREE.Vector3(-.42,.2,.43),new THREE.Vector3(-.28,-.18,.51),new THREE.Vector3(-.02,-.55,.5),new THREE.Vector3(.25,-.92,.38),new THREE.Vector3(.42,-1.18,.25)]);
@@ -88,7 +88,7 @@ if(host&&canvas){
  const logoCanvas=document.createElement('canvas');logoCanvas.width=256;logoCanvas.height=128;
  const logoCtx=logoCanvas.getContext('2d');logoCtx.clearRect(0,0,256,128);logoCtx.fillStyle='#ffffff';logoCtx.font='bold 76px Arial';logoCtx.textAlign='center';logoCtx.textBaseline='middle';logoCtx.fillText('NU',128,66);
  const logoTex=new THREE.CanvasTexture(logoCanvas);logoTex.colorSpace=THREE.SRGBColorSpace;
- const logo=new THREE.Mesh(new THREE.PlaneGeometry(.2,.1),new THREE.MeshBasicMaterial({map:logoTex,transparent:true,side:THREE.DoubleSide}));logo.position.set(-.28,-.42,.548);logo.rotation.z=-.08;root.add(logo);
+ const logo=new THREE.Mesh(new THREE.PlaneGeometry(.2,.1),new THREE.MeshBasicMaterial({map:logoTex,transparent:true,side:THREE.DoubleSide}));logo.position.set(-.27,-.28,.515);logo.rotation.z=-.08;root.add(logo);
  // bracelet on right wrist
  for(let i=0;i<9;i++){const a=i/9*Math.PI*2;const bead=new THREE.Mesh(new THREE.SphereGeometry(.035,12,10),mat([0xd6c79b,0x67a98e,0xe8e1c8,0x8d9bb4][i%4],.28));bead.position.set(.68+Math.cos(a)*.16,-.91+Math.sin(a)*.14,.12);root.add(bead)}
  // checkered scarf fabric texture
