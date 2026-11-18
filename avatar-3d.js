@@ -6,11 +6,11 @@ const loading=document.getElementById('avatarLoading');
 if(host&&canvas){
  const scene=new THREE.Scene();
  scene.background=null;
- const camera=new THREE.PerspectiveCamera(32,1,.1,100);
- camera.position.set(0,0.25,9.8);
+ const camera=new THREE.PerspectiveCamera(30,1,.1,100);
+ camera.position.set(0,0.15,7.8);
  camera.lookAt(0,0.08,0);
  const renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});
- renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+ renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,1.5));
  renderer.outputColorSpace=THREE.SRGBColorSpace;
  renderer.shadowMap.enabled=true;
  renderer.shadowMap.type=THREE.PCFSoftShadowMap;
@@ -93,9 +93,9 @@ if(host&&canvas){
  const ring=new THREE.Mesh(new THREE.TorusGeometry(1.45,.012,8,100),new THREE.MeshBasicMaterial({color:0x50ddff,transparent:true,opacity:.6}));ring.position.set(0,.15,-.85);ring.rotation.x=.25;root.add(ring);
  const floor=new THREE.Mesh(new THREE.CircleGeometry(1.35,64),new THREE.MeshBasicMaterial({color:0x123e67,transparent:true,opacity:.22}));floor.rotation.x=-Math.PI/2;floor.position.y=-1.67;scene.add(floor);
  function resize(){const w=host.clientWidth,h=host.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix()}
- new ResizeObserver(resize).observe(host);resize();loading?.remove();
+ if('ResizeObserver' in window){new ResizeObserver(resize).observe(host)}else{window.addEventListener('resize',resize)}resize();loading?.remove();
  let targetX=0,targetY=0,rotX=0,rotY=0,drag=false,px=0,py=0;
- canvas.addEventListener('pointerdown',e=>{drag=true;px=e.clientX;py=e.clientY;canvas.setPointerCapture(e.pointerId)});
+ canvas.addEventListener('pointerdown',e=>{drag=true;px=e.clientX;py=e.clientY;if(canvas.setPointerCapture)canvas.setPointerCapture(e.pointerId)});
  canvas.addEventListener('pointermove',e=>{if(!drag)return;targetY+=(e.clientX-px)*.009;targetX+=(e.clientY-py)*.006;targetX=THREE.MathUtils.clamp(targetX,-.32,.32);px=e.clientX;py=e.clientY});
  const stop=()=>drag=false;canvas.addEventListener('pointerup',stop);canvas.addEventListener('pointercancel',stop);
  canvas.addEventListener('pointerleave',stop);
