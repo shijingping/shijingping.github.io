@@ -18,74 +18,48 @@ a{color:inherit;text-decoration:none}.scan{display:none}.topbar{height:72px;posi
  --dark:rgba(4,10,25,.92);
 }
 html,body{background:#050a18!important;color:var(--ink)}
-body{
- background:
-  radial-gradient(ellipse at 16% 10%,rgba(0,170,255,.2),transparent 32%),
-  radial-gradient(ellipse at 84% 24%,rgba(104,77,255,.23),transparent 34%),
-  linear-gradient(145deg,#050a18 0%,#08152e 52%,#080b20 100%)!important;
- background-attachment:fixed!important;
-}
-body:before{
- content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.22;
- background-image:linear-gradient(rgba(85,234,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(85,234,255,.12) 1px,transparent 1px);
- background-size:58px 58px;transform:perspective(700px) rotateX(62deg) scale(1.8);transform-origin:center bottom;
- mask-image:linear-gradient(to bottom,transparent 8%,black 90%);
-}
-.site-header,.topbar,.nav{
- background:rgba(4,10,26,.88)!important;border-bottom:1px solid var(--line)!important;
- backdrop-filter:blur(20px) saturate(150%);-webkit-backdrop-filter:blur(20px) saturate(150%);
- box-shadow:0 12px 35px rgba(0,0,0,.28);
-}
+body{background:radial-gradient(ellipse at 16% 10%,rgba(0,170,255,.2),transparent 32%),radial-gradient(ellipse at 84% 24%,rgba(104,77,255,.23),transparent 34%),linear-gradient(145deg,#050a18 0%,#08152e 52%,#080b20 100%)!important;background-attachment:fixed!important}
+body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.22;background-image:linear-gradient(rgba(85,234,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(85,234,255,.12) 1px,transparent 1px);background-size:58px 58px;transform:perspective(700px) rotateX(62deg) scale(1.8);transform-origin:center bottom;mask-image:linear-gradient(to bottom,transparent 8%,black 90%)}
+.site-header,.topbar,.nav{background:rgba(4,10,26,.88)!important;border-bottom:1px solid var(--line)!important;backdrop-filter:blur(20px) saturate(150%);-webkit-backdrop-filter:blur(20px) saturate(150%);box-shadow:0 12px 35px rgba(0,0,0,.28)}
 .brand-mark,.archive-seal,.about-stamp{border-color:var(--cyan)!important;color:var(--cyan)!important;box-shadow:0 0 24px rgba(85,234,255,.22),inset 0 0 18px rgba(85,234,255,.08)}
 .nav-links a:hover,.top-actions a:hover,.backline a,.footer a,.back-top{color:var(--cyan)!important;text-shadow:0 0 14px rgba(85,234,255,.5)}
 .eyebrow,.prompt,.filebar,.terminal-title,.hero-meta strong,.output-head,.number,.label,.crest-live{color:var(--cyan)!important}
-h1,h2,h3,.hero h1{color:var(--ink)}
-h2 span,.outline-text,.hero h1 span,.glow{color:#a99aff!important;text-shadow:0 0 24px rgba(139,112,255,.42)}
+h1,h2,h3,.hero h1{color:var(--ink)}h2 span,.outline-text,.hero h1 span,.glow{color:#a99aff!important;text-shadow:0 0 24px rgba(139,112,255,.42)}
 .hero-visual,.hero-grid,.arsenal-grid,.lab-grid,.file-grid,.grid{perspective:1200px}
-.crest-card,.terminal-window,.file-card,.output,.filebar,.card,.arsenal-card,.lab-card,.contact-panel,.about-stamp,.profile-stats div{
- background:linear-gradient(145deg,rgba(24,48,91,.9),rgba(6,16,39,.94))!important;
- border:1px solid rgba(85,190,255,.38)!important;
- box-shadow:inset 0 1px 0 rgba(255,255,255,.13),0 22px 52px rgba(0,0,0,.42),0 0 26px rgba(35,160,255,.1);
- backdrop-filter:blur(16px) saturate(145%);-webkit-backdrop-filter:blur(16px) saturate(145%);
- transform-style:preserve-3d;
-}
-.crest-card{transform:rotateY(-9deg) rotateX(5deg);transition:transform .55s ease,box-shadow .55s ease}
-.hero-visual:hover .crest-card{transform:rotateY(7deg) rotateX(-3deg) translateY(-9px);box-shadow:0 30px 70px rgba(0,0,0,.5),0 0 42px rgba(85,234,255,.2)}
-.orbit{border-color:rgba(85,234,255,.4)!important;box-shadow:0 0 20px rgba(85,234,255,.12);animation:orbit3d 10s ease-in-out infinite}
-.orbit-two{border-color:rgba(155,131,255,.55)!important;animation-delay:-5s}
+.crest-card,.terminal-window,.file-card,.output,.filebar,.card,.arsenal-card,.lab-card,.contact-panel,.about-stamp,.profile-stats div{background:linear-gradient(145deg,rgba(24,48,91,.9),rgba(6,16,39,.94))!important;border:1px solid rgba(85,190,255,.38)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.13),0 22px 52px rgba(0,0,0,.42),0 0 26px rgba(35,160,255,.1);backdrop-filter:blur(16px) saturate(145%);-webkit-backdrop-filter:blur(16px) saturate(145%);transform-style:preserve-3d}
+.crest-card{transform:rotateY(-9deg) rotateX(5deg);transition:transform .55s ease,box-shadow .55s ease}.hero-visual:hover .crest-card{transform:rotateY(7deg) rotateX(-3deg) translateY(-9px);box-shadow:0 30px 70px rgba(0,0,0,.5),0 0 42px rgba(85,234,255,.2)}
+.orbit{border-color:rgba(85,234,255,.4)!important;box-shadow:0 0 20px rgba(85,234,255,.12);animation:orbit3d 10s ease-in-out infinite}.orbit-two{border-color:rgba(155,131,255,.55)!important;animation-delay:-5s}
 @keyframes orbit3d{0%,100%{transform:rotate(-25deg) translateY(0)}50%{transform:rotate(-14deg) translateY(-15px)}}
-.floating-tag,.status,.chip,.tags span,.tag-row span{
- background:rgba(5,18,43,.9)!important;border:1px solid rgba(85,234,255,.48)!important;color:var(--cyan)!important;
- box-shadow:0 10px 28px rgba(0,0,0,.28),0 0 18px rgba(85,234,255,.1);
-}
-.btn,.btn-primary,.file-links a,.resource-links a,.resource-links a.secondary,.tool-button{
- border:1px solid rgba(85,234,255,.48)!important;border-radius:12px!important;
- background:linear-gradient(125deg,rgba(13,127,184,.42),rgba(91,67,190,.5))!important;color:#effaff!important;
- box-shadow:0 9px 26px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.14);
- transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease,filter .3s ease;
-}
-.btn-primary,.file-links a:first-child,.resource-links a:first-child{
- background:linear-gradient(110deg,#43eaff,#7487ff 58%,#a17aff)!important;color:#061126!important;
-}
-.btn:hover,.btn-primary:hover,.file-links a:hover,.resource-links a:hover,.tool-button:hover{
- transform:translateY(-5px) perspective(600px) rotateX(5deg)!important;
- border-color:#a18cff!important;box-shadow:0 18px 38px rgba(0,0,0,.38),0 0 26px rgba(85,234,255,.22);filter:brightness(1.1);
-}
+.floating-tag,.status,.chip,.tags span,.tag-row span{background:rgba(5,18,43,.9)!important;border:1px solid rgba(85,234,255,.48)!important;color:var(--cyan)!important;box-shadow:0 10px 28px rgba(0,0,0,.28),0 0 18px rgba(85,234,255,.1)}
+.btn,.btn-primary,.file-links a,.resource-links a,.resource-links a.secondary,.tool-button{border:1px solid rgba(85,234,255,.48)!important;border-radius:12px!important;background:linear-gradient(125deg,rgba(13,127,184,.42),rgba(91,67,190,.5))!important;color:#effaff!important;box-shadow:0 9px 26px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.14);transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease,filter .3s ease}
+.btn-primary,.file-links a:first-child,.resource-links a:first-child{background:linear-gradient(110deg,#43eaff,#7487ff 58%,#a17aff)!important;color:#061126!important}
+.btn:hover,.btn-primary:hover,.file-links a:hover,.resource-links a:hover,.tool-button:hover{transform:translateY(-5px) perspective(600px) rotateX(5deg)!important;border-color:#a18cff!important;box-shadow:0 18px 38px rgba(0,0,0,.38),0 0 26px rgba(85,234,255,.22);filter:brightness(1.1)}
 .arsenal-card,.lab-card,.file-card,.card{transition:transform .38s ease,border-color .38s ease,box-shadow .38s ease}
-.arsenal-card:hover,.lab-card:hover,.file-card:hover,.card:hover{
- transform:translateY(-10px) rotateX(3deg) rotateY(-2deg)!important;
- border-color:rgba(85,234,255,.8)!important;
- box-shadow:0 28px 60px rgba(0,0,0,.45),0 0 34px rgba(85,234,255,.16)!important;
-}
+.arsenal-card:hover,.lab-card:hover,.file-card:hover,.card:hover{transform:translateY(-10px) rotateX(3deg) rotateY(-2deg)!important;border-color:rgba(85,234,255,.8)!important;box-shadow:0 28px 60px rgba(0,0,0,.45),0 0 34px rgba(85,234,255,.16)!important}
 .arsenal-icon,.file-icon,.crest-symbol{color:var(--cyan)!important;text-shadow:0 0 22px rgba(85,234,255,.58)}
 .tag-row span,.tags span{color:#c0b3ff!important;border-color:rgba(155,131,255,.58)!important}
 .quote-section{background:radial-gradient(ellipse at center,rgba(44,105,190,.24),transparent 65%),rgba(4,10,25,.72)!important;border-color:var(--line)!important}
-.progress-bar{background:linear-gradient(90deg,#55eaff,#7186ff,#a17aff)!important;box-shadow:0 0 16px #55eaff}
-.scanlines{opacity:.025!important}.noise{opacity:.02!important}
-.terminal,.output,.output-head{background-color:rgba(3,10,26,.9)!important;border-color:var(--line)!important}
-.terminal .hi,pre{color:#9cecff!important}
+.progress-bar{background:linear-gradient(90deg,#55eaff,#7186ff,#a17aff)!important;box-shadow:0 0 16px #55eaff}.scanlines{opacity:.025!important}.noise{opacity:.02!important}
+.terminal,.output,.output-head{background-color:rgba(3,10,26,.9)!important;border-color:var(--line)!important}.terminal .hi,pre{color:#9cecff!important}
 .footer,.site-footer{background:rgba(4,10,25,.88)!important;border-color:var(--line)!important;color:var(--muted)!important}
 .crest-card,.terminal-window{animation:coreFloat 7s ease-in-out infinite}
 @keyframes coreFloat{0%,100%{filter:drop-shadow(0 0 8px rgba(85,234,255,.06))}50%{filter:drop-shadow(0 0 20px rgba(125,103,255,.18))}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
 
+</style></head><body><div class="scan" aria-hidden="true"></div>
+<header class="topbar"><a class="brand" href="index.html">JCE<b>_</b>ROOT // WORK ARCHIVE</a><nav class="top-actions"><a href="index.html">← HOME</a><a href="#tasks">TASK DIRECTORY</a></nav></header>
+<main><section class="hero wrap"><div class="terminal-window"><div class="terminal-head"><div class="dots"><i></i><i></i><i></i></div><span class="terminal-title">jce@workspace: ~/projects</span><span class="terminal-title">SESSION: ACTIVE</span></div><div class="terminal-body"><div class="prompt"><span>DEVELOPER PROFILE / 001</span><br>&gt; JERMAIN C ENGO<br>&gt; BSIT STUDENT / NATIONAL UNIVERSITY CLARK<br>&gt; BUILDING IDEAS INTO CODE</div><h1>DEV_<span class="glow">WORKSPACE</span></h1><p class="hero-copy">Welcome to my digital workspace. This directory contains my programming laboratory activities, source code, documentation, and program outputs. Select a task file to inspect its contents.</p><div class="hero-meta"><span>ENV: <strong>JAVA / WEB</strong></span><span>STATUS: <strong>BUILDING</strong></span><span>FOCUS: <strong>CODE / CREATE / LEARN</strong></span></div><div class="actions"><a class="btn primary" href="#tasks">EXPLORE PROJECTS ↘</a><a class="btn" href="index.html">RETURN TO MAIN SITE</a></div></div></div></section>
+<section class="archive wrap" id="tasks"><div class="section-top"><div><p class="eyebrow">01 // DEVELOPER SPACE</p><h2>PROJECTS<span class="glow">.DEV</span></h2></div><p class="section-desc">A collection of programming exercises, source files, documentation, and project outputs. Select a project to explore its implementation.</p></div><div class="filebar"><span><strong>jce@workspace</strong>:~/projects$ browse</span><span>01 PROJECT AVAILABLE</span></div>
+<div class="file-grid"><article class="file-card"><div class="file-head"><span>FILE // LAB_001</span><span class="status">AVAILABLE</span></div><div class="file-icon">[ JAVA ]</div><h3>3x3 Matrix Calculator</h3><p>A Java program that accepts nine numbers, validates each entry, and calculates the row, column, and diagonal sums of a 3x3 matrix.</p><div class="tags"><span>JAVA</span><span>2D ARRAY</span><span>MATRIX SUMS</span></div><div class="file-links"><a href="task-01.html" target="_blank" rel="noopener">[ OPEN TASK ↗ ]</a><a href="labs/Matrix.java" target="_blank" rel="noopener">[ VIEW SOURCE CODE ↗ ]</a><a href="labs/matrix-lab.md" target="_blank" rel="noopener">[ OPEN DOCUMENTATION ↗ ]</a></div></article>
+<article class="file-card"><div class="file-head"><span>FILE // OUTPUT_001</span><span class="status">SAMPLE OUTPUT</span></div><div class="file-icon">[ OUT ]</div><h3>Program Output</h3><p>Sample console result for input values 1 through 9. Replace this preview with the actual screenshot when available.</p><div class="output"><div class="output-head">TERMINAL // PROGRAM RESULT</div><pre>Col 1   Col 2   Col 3   Row Sum
+1       2       3       6
+4       5       6       15
+7       8       9       24
+
+Column Sums:
+12      15      18
+
+Diagonal Sum 1: 15
+Diagonal Sum 2: 15</pre></div><p class="notice"><b>NOTE:</b> This is a sample text run, not an actual captured screenshot.</p></article></div>
+<div class="backline"><span>WORKSPACE STATUS // 1 PROJECT LOADED</span><a href="index.html">cd .. // BACK TO HOME ↑</a></div></section></main>
+<footer class="footer"><span>JERMAIN C ENGO // BSIT</span><span>BUILT WITH CURIOSITY // © 2026</span><span>SYSTEM: READY</span></footer></body></html>
