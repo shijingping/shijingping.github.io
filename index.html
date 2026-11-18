@@ -40,7 +40,7 @@
           <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
           <div class="avatar-pod">
             <div class="pod-label"><span>AVATAR UNIT // JCE-017</span><b>● ONLINE</b></div><div class="avatar-platform"><i></i><i></i><i></i></div>
-            <div class="avatar-3d" aria-label="Animated 3D-style anime portrait of Jermain"><div class="avatar-aura"></div><div class="avatar-halo"></div><img class="avatar-art" src="assets/jermain-avatar.webp" alt="Jermain's 3D anime avatar wearing his NU uniform and checkered head covering"><div class="avatar-glint"></div></div><div class="pod-name"><strong>JERMAIN C. ENGO</strong><span>THE DEVELOPER // DIGITAL PERSONA</span></div></div>
+            <div class="avatar-3d" id="avatar3d" aria-label="Interactive full 3D anime character of Jermain"><canvas id="avatarCanvas"></canvas><div class="avatar-loading" id="avatarLoading">LOADING 3D AVATAR...</div><div class="avatar-controls">DRAG TO ROTATE <span>✦</span></div></div><div class="pod-name"><strong>JERMAIN C. ENGO</strong><span>THE DEVELOPER // DIGITAL PERSONA</span></div></div>
           <div class="floating-tag tag-top">HOLOGRAM SYNC // ACTIVE <b>98.7%</b></div>
           <div class="floating-tag tag-bottom"><span class="mini-bars">▂ ▅ ▃ ▆ ▄ ▇</span> SYSTEM READY</div>
           <div class="crosshair crosshair-a">＋</div><div class="crosshair crosshair-b">＋</div>
@@ -90,6 +90,7 @@
 
   <audio id="portfolioAudio" src="assets/portfolio-theme.mp3" loop preload="none"></audio>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="avatar-3d.js?v=1"></script>
   <script src="script.js?v=bleach-01"></script>
 </body>
 </html>
